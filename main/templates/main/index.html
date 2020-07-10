@@ -1,0 +1,29 @@
+<h1>Does this tweet contain symptoms?</h1>
+{{tweet.pk}}: {{tweet.text}}
+
+<p>
+<a href='/annotate/{{tweet.pk}}/1/'><button>yes</button></a>
+<a href='/annotate/{{tweet.pk}}/0/'><button>no</button></a>
+<a href='/'><button> skip</button></a>
+</p>
+
+<h2>Annotated tweets</h2>
+
+<table>
+
+  <tr>
+    <th>Tweet</th>
+    <th>Symptom?</th>
+    <th>UUID</th>
+    <th>added at</th>
+  </tr>
+
+{%for ta in tweet_annotations%}
+<tr>
+  <td>{{ta.tweet.text}}</td>
+  <td>{{ta.symptom}}</td>
+  <td>{{ta.uuid}}</td>
+  <td>{{ta.created}}</td>
+</tr>
+{%endfor%}
+</table>
