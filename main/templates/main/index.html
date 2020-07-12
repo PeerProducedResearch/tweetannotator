@@ -1,13 +1,31 @@
-<h1>Does this tweet contain symptoms?</h1>
-{{tweet.pk}}: {{tweet.text}}
+{% extends 'base.html' %}
 
-<p>
-<a href='/annotate/{{tweet.pk}}/1/'><button>yes</button></a>
-<a href='/annotate/{{tweet.pk}}/0/'><button>no</button></a>
-<a href='/'><button> skip</button></a>
-</p>
+{% block main %}
 
-<h2>Annotated tweets</h2>
+
+<div class="row">
+  <div class="col-sm">
+    <h1 class="display-4">Does this tweet contain symptoms?</h1>
+    <div class="jumbotron">
+      <blockquote class="blockquote">
+        <p class="lead">{{tweet.text}}</p>
+      </blockquote>
+    </div>
+  <p>
+    <a href='/annotate/{{tweet.pk}}/1/' class="btn btn-primary btn-lg">Yes</a>
+    <a href='/annotate/{{tweet.pk}}/0/' class="btn btn-primary btn-lg">No</a>
+    <a href='/' class="btn btn-primary btn-lg">skip</a>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm">
+    Your contribution will help us bla bla bla
+  </div>
+</div>
+
+<h2>See the already annotated tweets</h2>
 
 <table>
 
@@ -27,3 +45,5 @@
 </tr>
 {%endfor%}
 </table>
+
+{% endblock main %}
