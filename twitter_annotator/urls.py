@@ -20,5 +20,5 @@ from main.views import index, annotate
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('annotate/<int:tweet_id>/<int:answer>/', annotate, name='annotate'),
+    path('annotate/<int:tweet_id>/<str:answer>/', annotate, name='annotate'),
 ]

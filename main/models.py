@@ -16,6 +16,6 @@ class TweetAnnotation(models.Model):
     This is a one to one relationship with a OpenHumansMember object.
     """
     tweet = models.ForeignKey(Tweet, on_delete=models.CASCADE)
-    symptom = models.BooleanField()
+    symptom = models.TextField()
     uuid = models.TextField()
     created = models.DateTimeField(auto_now_add=True)

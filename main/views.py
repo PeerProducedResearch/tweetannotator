@@ -19,7 +19,7 @@ def get_random_tweet():
 def index(request):
     tweet = get_random_tweet()
     tweet.text = tweet.text.strip(";;")
-    tweet_annotations = TweetAnnotation.objects.all()
+    tweet_annotations = TweetAnnotation.objects.all().order_by('-created')
     context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
 
     print(request.session.keys())
@@ -31,7 +31,6 @@ def index(request):
 
 def annotate(request, tweet_id, answer):
     tweet = Tweet.objects.get(id=tweet_id)
-    answer = bool(answer)
     ta = TweetAnnotation.objects.create(
         tweet=tweet,
         symptom=answer,
