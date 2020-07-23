@@ -19,7 +19,7 @@ def get_random_tweet():
 def index(request):
     tweet = get_random_tweet()
     tweet.text = tweet.text.strip(";;")
-    tweet_annotations = TweetAnnotation.objects.all().order_by('-created')
+    tweet_annotations = TweetAnnotation.objects.all().order_by('-created')[:5]
     context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
 
     print(request.session.keys())

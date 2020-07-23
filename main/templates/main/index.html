@@ -2,45 +2,63 @@
 
 {% block main %}
 
+{% load i18n %}
 
 <div class="row">
   <div class="col-sm">
-    <h1 class="display-4">Does this tweet contain symptoms?</h1>
     <div class="jumbotron">
-      <blockquote class="blockquote">
-        <p class="lead">{{tweet.text}}</p>
-      </blockquote>
-    </div>
-  <p>
-    <a href='/annotate/{{tweet.pk}}/yes/' class="btn btn-primary btn-lg">Yes</a>
-    <a href='/annotate/{{tweet.pk}}/no/' class="btn btn-warning btn-lg">No</a>
-    <a href='/annotate/{{tweet.pk}}/skip/' class="btn btn-secondary btn-lg">skip</a>
+      <h3 class="display-5">{% trans "Does this tweet contain symptoms?" %}</h3>
+        <hr class="my-4">
+      <div class="card">
+        <div class="card-body">
+          <blockquote class="blockquote">
+            <p class="lead">{{tweet.text}}</p>
+          </blockquote>
+        </div>
+      </div>
+  <p><br/>
+    <a href='/annotate/{{tweet.pk}}/yes/' class="btn btn-primary btn-lg">{% trans "Yes" %}</a>
+    <a href='/annotate/{{tweet.pk}}/no/' class="btn btn-warning btn-lg">{% trans "No" %}</a>
+    <a href='/annotate/{{tweet.pk}}/skip/' class="btn btn-secondary btn-lg">{% trans "skip" %}</a>
     </p>
   </div>
-</div>
 
-<div class="row">
+  </div>
   <div class="col-sm">
-    Your contribution will help us bla bla bla
+    <h4>What is this about?</h4>
+    {% blocktrans %}
+    <p>
+      We are trying to create a model of how tweets about symptoms can predict
+      the general rise and fall of a disease. To that end we crawled public tweets from
+      location X and plotted them (see our graph). But of course people don't only tweet about symptoms
+      when they are currently falling sick, but also about that one time a year ago when they fell sick, or
+      when talking about the general news.
+      {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+    To filter out such false-positives we need <strong>your</strong> help!
+    Which of those tweets are actually about describing an acute symptom and which ones don't? Your contribution makes a
+    direct impact!
+    {% endblocktrans %}
+  </p>
   </div>
 </div>
 
-<h2>See the already annotated tweets</h2>
+<h2>{% trans "Latest annotations" %}</h2>
 
 <table>
 
   <tr>
     <th>Tweet</th>
-    <th>Symptom?</th>
-    <th>UUID</th>
-    <th>added at</th>
+    <th>{% trans "Symptom" %}?</th>
+    <th>{% trans "added at" %}</th>
   </tr>
 
 {%for ta in tweet_annotations%}
 <tr>
   <td>{{ta.tweet.text}}</td>
   <td>{{ta.symptom}}</td>
-  <td>{{ta.uuid}}</td>
   <td>{{ta.created}}</td>
 </tr>
 {%endfor%}
