@@ -3,6 +3,7 @@ import uuid
 import random
 from .models import Tweet, TweetAnnotation
 from django.db.models import Max
+from django.http import HttpResponse
 # Create your views here.
 from .helpers import create_graph
 
@@ -20,13 +21,10 @@ def index(request):
     tweet = get_random_tweet()
     tweet.text = tweet.text.strip(";;")
     tweet_annotations = TweetAnnotation.objects.all().order_by('-created')[:5]
-    graph = create_graph()
-    context = {'tweet': tweet, 'tweet_annotations': tweet_annotations, 'graph': graph}
+    context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
 
-    print(request.session.keys())
     if not request.session.get('uuid', ''):
         request.session['uuid'] = str(uuid.uuid4())
-    print(request.session.get('uuid'))
     return render(request, 'main/index.html', context)
 
 
@@ -38,3 +36,8 @@ def annotate(request, tweet_id, answer):
         uuid=request.session.get('uuid', ''))
     ta.save()
     return redirect('/')
+
+
+def graph(request):
+    graph = create_graph()
+    return HttpResponse(graph)

@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import index, annotate
+from main.views import index, annotate, graph
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('annotate/<int:tweet_id>/<str:answer>/', annotate, name='annotate'),
+    path("graph", graph, name='graph'),
     path('i18n/', include('django.conf.urls.i18n')),
 ]

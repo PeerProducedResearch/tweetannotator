@@ -66,10 +66,18 @@
 {%endfor%}
 </table>
 
-{% if graph %}
-<div style="width:600;height:500">
-{{ graph|safe }}
+<h3>Visualization</h3>
+<div id='graph' style="width:600;height:500">
+  <center>
+  <div class="spinner-border" role="status"></div>
+  </center>
 </div>
-{%endif%}
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$.get("/graph", function( data ) {
+  $("#graph").replaceWith(data);
+});
+</script>
 {% endblock main %}

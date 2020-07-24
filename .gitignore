@@ -1,0 +1,5 @@
+.env
+.tx
+db.sqlite3
+dump.rdb
+
