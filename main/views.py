@@ -4,7 +4,7 @@ import random
 from .models import Tweet, TweetAnnotation
 from django.db.models import Max
 # Create your views here.
-from django.http import HttpResponse
+from .helpers import create_graph
 
 
 def get_random_tweet():
@@ -20,7 +20,8 @@ def index(request):
     tweet = get_random_tweet()
     tweet.text = tweet.text.strip(";;")
     tweet_annotations = TweetAnnotation.objects.all().order_by('-created')[:5]
-    context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
+    graph = create_graph()
+    context = {'tweet': tweet, 'tweet_annotations': tweet_annotations, 'graph': graph}
 
     print(request.session.keys())
     if not request.session.get('uuid', ''):
