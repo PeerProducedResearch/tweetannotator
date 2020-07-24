@@ -2,6 +2,7 @@ import pandas as pd
 import plotly.offline as py
 import plotly.graph_objs as go
 from .models import Tweet
+from django.utils.translation import gettext_lazy as _
 
 
 def df_from_tweets(only_symptoms=False):
@@ -39,7 +40,7 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, sympto
         x=all_tweets['date'],
         y=all_tweets['has_symptom'].values,
         mode='lines',
-        name='Tweets symptoms unfiltered',
+        name=_('Tweets symptoms unfiltered'),
         opacity=0.3,
         line=dict(color='orange'),
         yaxis="y1"))
@@ -48,13 +49,13 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, sympto
         y=all_tweets['has_symptom_mean_3'].values,
         mode='lines',
         line=dict(color='orange'),
-        name='Tweets symptoms unfiltered (avg 3d)',
+        name=_('Tweets symptoms unfiltered (avg 3d)'),
         yaxis="y1"))
     traces.append(go.Scatter(
         x=symptom_tweets_df['date'],
         y=symptom_tweets_df['has_symptom'].values,
         mode='lines',
-        name='Tweets symptoms filtered',
+        name=_('Tweets symptoms filtered'),
         opacity=0.3,
         line=dict(color='blue'),
         yaxis="y1"))
@@ -63,13 +64,13 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, sympto
         y=symptom_tweets_df['has_symptom_mean_3'].values,
         mode='lines',
         line=dict(color='blue'),
-        name='Tweets symptoms filtered (avg 3d)',
+        name=_('Tweets symptoms filtered (avg 3d)'),
         yaxis="y1"))
     traces.append(go.Scatter(
         x=urgences.date_de_passage,
         y=urgences['nbre_pass_corona'],
         mode='lines',
-        name='Passages to emergencies',
+        name=_('Passages to emergencies'),
         opacity=0.3,
         line=dict(color='black'),
         yaxis="y2"))
@@ -77,15 +78,15 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, sympto
         x=urgences.date_de_passage,
         y=urgences['nbre_pass_corona' + '_mean_3'],
         mode='lines',
-        name='Passages to emergencies (avg 3d)',
+        name=_('Passages to emergencies (avg 3d)'),
         line=dict(color='black'),
         yaxis="y2"))
     layout = go.Layout(
-        title="Evolution of mentions of symptoms and emergencies related to COVID in Ile-de-France ",
+        title=_("Evolution of mentions of symptoms and emergencies related to COVID in Ile-de-France "),
         legend={"x": 1.1, "y": 1},
-        yaxis=dict(title='Number of tweets'),
+        yaxis=dict(title=_('Number of tweets')),
         yaxis2=dict(
-            title='Number of emergencies related to COVID',
+            title=_('Number of emergencies related to COVID'),
             overlaying='y',
             side='right'))
 
@@ -105,6 +106,6 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, sympto
         x='2020-04-15',
         y=0.95,
         yref="paper",
-        text="Lockdown (France)", showarrow=False)])
+        text=_("Lockdown (France)"), showarrow=False)])
     div = py.plot(fig, auto_open=False, output_type='div')
     return div

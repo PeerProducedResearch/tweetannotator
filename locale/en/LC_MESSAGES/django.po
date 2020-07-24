@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-23 14:51+0000\n"
+"POT-Creation-Date: 2020-07-24 14:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,112 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/templates/base.html:21
+#: main/helpers.py:43
+msgid "Tweets symptoms unfiltered"
+msgstr ""
+
+#: main/helpers.py:52
+msgid "Tweets symptoms unfiltered (avg 3d)"
+msgstr ""
+
+#: main/helpers.py:58
+msgid "Tweets symptoms filtered"
+msgstr ""
+
+#: main/helpers.py:67
+msgid "Tweets symptoms filtered (avg 3d)"
+msgstr ""
+
+#: main/helpers.py:73
+msgid "Passages to emergencies"
+msgstr ""
+
+#: main/helpers.py:81
+msgid "Passages to emergencies (avg 3d)"
+msgstr ""
+
+#: main/helpers.py:85
+msgid ""
+"Evolution of mentions of symptoms and emergencies related to COVID in Ile-de-"
+"France "
+msgstr ""
+
+#: main/helpers.py:87
+msgid "Number of tweets"
+msgstr ""
+
+#: main/helpers.py:89
+msgid "Number of emergencies related to COVID"
+msgstr ""
+
+#: main/helpers.py:109
+msgid "Lockdown (France)"
+msgstr ""
+
+#: main/templates/base.html:13
+msgid "Annotate tweets on COVID19"
+msgstr ""
+
+#: main/templates/base.html:22
 msgid "COVID19 Tweet annotation"
+msgstr ""
+
+#: main/templates/base.html:44
+msgid "About"
+msgstr ""
+
+#: main/templates/main/index.html:12
+msgid "Does this tweet contain symptoms?"
+msgstr ""
+
+#: main/templates/main/index.html:22
+msgid "Yes"
+msgstr ""
+
+#: main/templates/main/index.html:23
+msgid "No"
+msgstr ""
+
+#: main/templates/main/index.html:24
+msgid "skip"
+msgstr ""
+
+#: main/templates/main/index.html:31
+msgid ""
+"\n"
+"    <p>\n"
+"      We are trying to create a model of how tweets about symptoms can "
+"predict\n"
+"      the general rise and fall of a disease. To that end we crawled public "
+"tweets from\n"
+"      location X and plotted them (see our graph). But of course people "
+"don't only tweet about symptoms\n"
+"      when they are currently falling sick, but also about that one time a "
+"year ago when they fell sick, or\n"
+"      when talking about the general news.\n"
+"      "
+msgstr ""
+
+#: main/templates/main/index.html:41
+msgid ""
+"\n"
+"    To filter out such false-positives we need <strong>your</strong> help!\n"
+"    Which of those tweets are actually about describing an acute symptom and "
+"which ones don't? Your contribution makes a\n"
+"    direct impact!\n"
+"    "
+msgstr ""
+
+#: main/templates/main/index.html:50
+msgid "Latest annotations"
+msgstr ""
+
+#: main/templates/main/index.html:56
+msgid "Symptom"
+msgstr ""
+
+#: main/templates/main/index.html:57
+msgid "added at"
 msgstr ""
 
 #: twitter_annotator/settings.py:122

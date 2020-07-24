@@ -4,6 +4,8 @@
 
 {% load i18n %}
 
+{% load tweet_display %}
+
 <div class="row">
   <div class="col-sm">
     <div class="jumbotron">
@@ -12,7 +14,7 @@
       <div class="card">
         <div class="card-body">
           <blockquote class="blockquote">
-            <p class="lead">{{tweet.text}}</p>
+            <p class="lead">{{ tweet.text|tweet_display }}</p>
           </blockquote>
         </div>
       </div>
@@ -57,7 +59,7 @@
 
 {%for ta in tweet_annotations%}
 <tr>
-  <td>{{ta.tweet.text}}</td>
+  <td>{{ta.tweet.text|tweet_display}}</td>
   <td>{{ta.symptom}}</td>
   <td>{{ta.created}}</td>
 </tr>
