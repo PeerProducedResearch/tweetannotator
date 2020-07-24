@@ -7,7 +7,10 @@ class Command(BaseCommand):
     help = "Import tweets from a file"
 
     def handle(self, *args, **options):
-        df = pd.read_csv('covid_mars_utf.csv',sep="\n",header=None)
-        for i in df[0]:
-            t, _ = Tweet.objects.get_or_create(text=i)
+        df = pd.read_csv('static/list_covid_symptoms.testing.csv', sep=";")
+        for i, row in df.iterrows():
+            t, _ = Tweet.objects.get_or_create(
+                text=row['anonymized_text'],
+                tweet_id=row['id_str'],
+                date=row['day'])
             t.save()

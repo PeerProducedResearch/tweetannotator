@@ -8,6 +8,8 @@ class Tweet(models.Model):
     This is a one to one relationship with a OpenHumansMember object.
     """
     text = models.TextField(blank=True, null=True)
+    date = models.DateField(blank=True)
+    tweet_id = models.TextField(blank=True)
 
 
 class TweetAnnotation(models.Model):

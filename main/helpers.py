@@ -1,6 +1,25 @@
 import pandas as pd
 import plotly.offline as py
 import plotly.graph_objs as go
+from .models import Tweet
+
+
+def df_from_tweets(only_symptoms=False):
+    dates = []
+    if only_symptoms == True:
+        iterator = Tweet.objects.exclude(tweetannotation__symptom='no')
+    else:
+        iterator = Tweet.objects.all()
+    for i in iterator:
+        dates.append(i.date)
+    df = pd.DataFrame(data={
+        'date': dates,
+        'has_symptom': dates})
+    df['date'] = pd.to_datetime(df['date'])
+    adf = df.groupby(['date']).count()
+    adf['has_symptom_mean_3'] = adf.rolling('3d').mean()['has_symptom']
+    adf = adf.reset_index()
+    return adf
 
 
 def create_graph():
@@ -8,26 +27,43 @@ def create_graph():
     urgences = pd.read_csv('static/urgences.csv', sep=';')
     tweets_symptoms['day'] = pd.to_datetime(tweets_symptoms['day'])
     urgences['date_de_passage'] = pd.to_datetime(urgences['date_de_passage'])
-    div = plot_symptoms_urgences_with_ma(tweets_symptoms, urgences)
+    all_tweets_df = df_from_tweets()
+    symptom_tweets_df = df_from_tweets(only_symptoms=True)
+    div = plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets_df, symptom_tweets_df)
     return div
 
 
-def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences):
+def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences, all_tweets, symptom_tweets_df):
     traces = []
     traces.append(go.Scatter(
-        x=tweets_symptoms['day'],
-        y=tweets_symptoms['has_symptom'].values,
+        x=all_tweets['date'],
+        y=all_tweets['has_symptom'].values,
         mode='lines',
         name='Tweets symptoms unfiltered',
         opacity=0.3,
-        line=dict(color='red'),
+        line=dict(color='orange'),
         yaxis="y1"))
     traces.append(go.Scatter(
-        x=tweets_symptoms['day'],
-        y=tweets_symptoms['has_symptom_mean_3'].values,
+        x=all_tweets['date'],
+        y=all_tweets['has_symptom_mean_3'].values,
         mode='lines',
-        line=dict(color='red'),
+        line=dict(color='orange'),
         name='Tweets symptoms unfiltered (avg 3d)',
+        yaxis="y1"))
+    traces.append(go.Scatter(
+        x=symptom_tweets_df['date'],
+        y=symptom_tweets_df['has_symptom'].values,
+        mode='lines',
+        name='Tweets symptoms filtered',
+        opacity=0.3,
+        line=dict(color='blue'),
+        yaxis="y1"))
+    traces.append(go.Scatter(
+        x=symptom_tweets_df['date'],
+        y=symptom_tweets_df['has_symptom_mean_3'].values,
+        mode='lines',
+        line=dict(color='blue'),
+        name='Tweets symptoms filtered (avg 3d)',
         yaxis="y1"))
     traces.append(go.Scatter(
         x=urgences.date_de_passage,
@@ -35,14 +71,14 @@ def plot_symptoms_urgences_with_ma(tweets_symptoms, urgences):
         mode='lines',
         name='Passages to emergencies',
         opacity=0.3,
-        line=dict(color='green'),
+        line=dict(color='black'),
         yaxis="y2"))
     traces.append(go.Scatter(
         x=urgences.date_de_passage,
         y=urgences['nbre_pass_corona' + '_mean_3'],
         mode='lines',
         name='Passages to emergencies (avg 3d)',
-        line=dict(color='green'),
+        line=dict(color='black'),
         yaxis="y2"))
     layout = go.Layout(
         title="Evolution of mentions of symptoms and emergencies related to COVID in Ile-de-France ",
