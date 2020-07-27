@@ -45,3 +45,18 @@ def annotate(request, tweet_id, answer):
 def graph(request):
     graph = create_graph()
     return HttpResponse(graph)
+
+
+def download_annotations(requests):
+    csv = "tweet_id;symptom;uuid;timestamp\n"
+    for i in TweetAnnotation.objects.all():
+        csv += "{};{};{};{}\n".format(
+            i.tweet.tweet_id,
+            i.symptom,
+            i.uuid,
+            i.created
+        )
+
+    response = HttpResponse(csv, content_type='text')
+    response['Content-Disposition'] = "attachment; filename=%s" % "annotations.csv"
+    return response

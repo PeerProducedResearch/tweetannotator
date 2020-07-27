@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from main.views import index, annotate, graph, about
+from main.views import index, annotate, graph, about, download_annotations
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +24,5 @@ urlpatterns = [
     path('annotate/<int:tweet_id>/<str:answer>/', annotate, name='annotate'),
     path("graph", graph, name='graph'),
     path('i18n/', include('django.conf.urls.i18n')),
+    path('download-annotations/', download_annotations, name='download_annotations'),
 ]
