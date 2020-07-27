@@ -2,4 +2,5 @@
 .tx
 db.sqlite3
 dump.rdb
-
+__pycache__
+.DS_Store
