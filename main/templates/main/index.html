@@ -9,13 +9,21 @@
 <div class="row">
   <div class="col-sm">
     <div class="jumbotron">
-      <h3 class="display-5">{% trans "Does this tweet contain symptoms?" %}</h3>
+      <h3 class="display-5">{% trans "Does this tweet contain self-reported COVID19 symptoms?" %}</h3>
+      <small>
+        {% blocktrans %}
+        Symptoms can be about the person tweeting or someone they are referring to directly.
+        They should be current and not about past events.
+        If you are unsure about your annotation, hit the “<i>skip</i>” button.”
+        {% endblocktrans %}
+      </small>
         <hr class="my-4">
       <div class="card">
         <div class="card-body">
           <blockquote class="blockquote">
             <p class="lead">{{ tweet.text|tweet_display }}</p>
           </blockquote>
+          <small>{{tweet.date}}</small>
         </div>
       </div>
   <p><br/>
@@ -30,43 +38,83 @@
     <h4>What is this about?</h4>
     {% blocktrans %}
     <p>
-      We are trying to create a model of how tweets about symptoms can predict
-      the general rise and fall of a disease. To that end we crawled public tweets from
-      location X and plotted them (see our graph). But of course people don't only tweet about symptoms
-      when they are currently falling sick, but also about that one time a year ago when they fell sick, or
-      when talking about the general news.
+      In this study, we aim to create a model of how tweets about self-reported COVID19 symptoms
+      can help predict upcoming pandemic waves, and more generally the rise and fall of the disease.
+      To that end, we crawled public tweets from the Paris region filtered by symptoms keywords, and plotted them in time (see the graph below).
+    </p>
+    {% endblocktrans %}
+    <p>
+      {% blocktrans %}
+      However, this filtering is very crude, e.g people don't only tweet about symptoms when they are currently falling sick,
+      but also about that one time a year ago when they fell sick, or when talking about the general news.
       {% endblocktrans %}
   </p>
   <p>
     {% blocktrans %}
     To filter out such false-positives we need <strong>your</strong> help!
-    Which of those tweets are actually about describing an acute symptom and which ones don't? Your contribution makes a
-    direct impact!
+    Which of these tweets are describing an acute symptom and which ones don't?
+    Your contribution will make a direct impact!
+    {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+    If you want to learn more about the people behind this project you can <a href="/about">visit our <i>About</i> page</a>.
     {% endblocktrans %}
   </p>
   </div>
 </div>
 
 <h2>{% trans "Latest annotations" %}</h2>
+<div class="row">
+  <div class="col-9">
+    <table class='table'>
 
-<table>
+      <tr>
+        <th>Tweet</th>
+        <th>{% trans "Annotation" %}?</th>
+        <th>{% trans "date" %}</th>
+      </tr>
 
-  <tr>
-    <th>Tweet</th>
-    <th>{% trans "Symptom" %}?</th>
-    <th>{% trans "added at" %}</th>
-  </tr>
+    {%for ta in tweet_annotations%}
+    <tr>
+      <td>{{ta.tweet.text|tweet_display}}</td>
+      <td>{{ta.symptom}}</td>
+      <td>{{ta.created}}</td>
+    </tr>
+    {%endfor%}
+    </table>
+  </div>
+  <div class="col-3">
+    <p>
+    {% blocktrans %}
+    Do you want to run your own data analyses?
+    You can download the current labeling (including a unique ID referring to each annotator session) to create your own filtering or machine learning algorithm.
+    {% endblocktrans %}
+    </p>
+    <p>
+    <a href='/annotate/{{tweet.pk}}/skip/' class="btn btn-primary btn-lg">{% trans "Download annotation" %}</a>
+    </p>
+    <p>
+      {% blocktrans %}
 
-{%for ta in tweet_annotations%}
-<tr>
-  <td>{{ta.tweet.text|tweet_display}}</td>
-  <td>{{ta.symptom}}</td>
-  <td>{{ta.created}}</td>
-</tr>
-{%endfor%}
-</table>
+      Please visit our <a href="https://github.com/InteractionDataLab/covid-twitter-analysis">GitHub repository</a> if you want to contribute!
+      {% endblocktrans %}
+    </p>
+  </div>
+</div>
 
 <h3>Visualization</h3>
+{% blocktrans %}
+<p>
+Below we visualise the number of tweets containing COVID19 symptoms using 7 days averaging windows,
+both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue).
+{%endblocktrans%}
+</p>
+<p>
+{%blocktrans%}
+We show as a reference the number of passages to emergencies (see <a href='/about#analysis'>Analysis</a> for more information).
+{%endblocktrans%}
+</p>
 <div id='graph' style="width:600;height:500">
   <center>
   <div class="spinner-border" role="status"></div>

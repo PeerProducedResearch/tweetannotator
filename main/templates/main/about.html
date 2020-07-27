@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+{% load i18n %}
+
+{% load static %}
+
+<div class="row">
+  <div class="col-6">
+  <h2>{% trans "About" %}</h2>
+  <p>
+  {% blocktrans %}
+  This project is collaboration between the <a href="https://research.cri-paris.org/teampage?id=5cde7f999a474e4a9f93b281">Interaction Data Lab</a>
+  and the <a href="https://research.cri-paris.org/teampage?id=5d809b499a474e063faa3a1a">Peer-Produced Research Lab</a> of <a href="https://research.cri-paris.org">CRI Paris</a>.
+  {% endblocktrans %}
+  </p>
+  <p>
+  {% blocktrans %}
+  In this study, we provide a replicable, data-driven approach to investigate a potential second wave of the COVID pandemic.
+  In an open science spirit, we are particularly interested in how citizens can take part in research projects at all levels,
+  from crowdsourcing to machine learning algorithms.
+  {% endblocktrans %}
+  </p>
+  <p>
+  {% blocktrans %}
+  This is why we tried to open the products of this study as much as possible,
+  from downloadable labeling data to <a href="https://github.com/InteractionDataLab/covid-twitter-analysis">directly editable notebooks through Binder</a>.
+  {% endblocktrans %}
+  </p>
+  <h3>{% trans "The Analysis"%}</h3>
+  <p>
+  {% blocktrans %}
+  We collected tweets specifically from users in Île-de-France.
+  We first used the Streaming API to identify users in the Paris area,
+  and then collected the historic data from these users.
+  This dashboard presents our analyses, based on 30,000 Twitter users,
+  for a total of about 33 million tweets from December 2019 (17 million without retweets).
+  {% endblocktrans %}
+  </p>
+  <p>
+    {% blocktrans %}
+    For the number of passages to emergencies, we used public data from Santé Publique France about emergencies and SOS Médecins data related to COVID.
+    {% endblocktrans %}
+  </p>
+  </div>
+
+  <div class="col-6">
+    <h3>{% trans "The Team"%}</h3>
+    <div class="row">
+      <div class="col-sm-6">
+    <div class="card">
+      <img src="{% static "marc.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Marc Santolini</h5>
+        <p class="card-text">
+          {% blocktrans %}
+          Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          {%endblocktrans%}
+          <a href="#" class="btn btn-primary">Learn more</a>
+      </div>
+    </div>
+    </div>
+    <div class='col-sm-6'>
+    <div class="card">
+      <img src="{% static "bastian.jpg" %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Bastian Greshake Tzovaras</h5>
+        <p class="card-text">
+          {% blocktrans %}
+          Some quick example text to build on the card's content.</p>
+          {%endblocktrans%}
+          <a href="#" class="btn btn-primary">Learn more</a>
+      </div>
+    </div>
+    </div>
+  </div>
+  <p></p>
+  <div class="row">
+    <div class="col-sm-6">
+  <div class="card">
+    <img src="{% static "naila.png" %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Naïla El Haouari</h5>
+      <p class="card-text">
+        {% blocktrans %}
+        Some quick example text to build on the card title and make up the  jklj lkj;j bulk of the card's content.</p>
+        {%endblocktrans%}
+        <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  </div>
+  <div class='col-sm-6'>
+  <div class="card">
+    <img src="{% static "sam.png" %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Sam</h5>
+      <p class="card-text">
+        {% blocktrans %}
+        Some quick example text to build on the card title and make up the content.</p>
+        {%endblocktrans%}
+        <a href="#" class="btn btn-primary">Learn more</a>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+{% endblock main %}

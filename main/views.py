@@ -28,6 +28,10 @@ def index(request):
     return render(request, 'main/index.html', context)
 
 
+def about(request):
+    return render(request, 'main/about.html')
+
+
 def annotate(request, tweet_id, answer):
     tweet = Tweet.objects.get(id=tweet_id)
     ta = TweetAnnotation.objects.create(
