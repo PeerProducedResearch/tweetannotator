@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-27 16:23+0000\n"
+"POT-Creation-Date: 2020-07-30 14:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,11 @@ msgstr ""
 msgid "COVID19 Tweet annotation"
 msgstr ""
 
-#: main/templates/base.html:44 main/templates/main/about.html:11
+#: main/templates/base.html:44
+msgid "Analysis"
+msgstr ""
+
+#: main/templates/base.html:45 main/templates/main/about.html:11
 msgid "About"
 msgstr ""
 
@@ -222,10 +226,14 @@ msgid ""
 msgstr ""
 
 #: main/templates/main/index.html:95
-msgid "Download annotation"
+msgid "Download Tweets"
 msgstr ""
 
 #: main/templates/main/index.html:98
+msgid "Download annotation"
+msgstr ""
+
+#: main/templates/main/index.html:101
 msgid ""
 "\n"
 "\n"
@@ -234,7 +242,7 @@ msgid ""
 "      "
 msgstr ""
 
-#: main/templates/main/index.html:107
+#: main/templates/main/index.html:110
 msgid ""
 "\n"
 "<p>\n"
@@ -244,11 +252,11 @@ msgid ""
 "using crowd-sourced annotation (blue).\n"
 msgstr ""
 
-#: main/templates/main/index.html:114
+#: main/templates/main/index.html:117
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/"
-"about#analysis'>Analysis</a> for more information).\n"
+"analysis'>Analysis</a> for more information).\n"
 msgstr ""
 
 #: twitter_annotator/settings.py:122

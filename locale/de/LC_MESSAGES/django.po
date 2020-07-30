@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-27 16:23+0000\n"
+"POT-Creation-Date: 2020-07-30 14:36+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
 "Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
 "Language-Team: German (https://www.transifex.com/opencovid-survey/"
@@ -30,7 +30,11 @@ msgstr "Annotieren sie Tweets zu COVID-19"
 msgid "COVID19 Tweet annotation"
 msgstr "COVID-19 Tweet-Annotierung"
 
-#: main/templates/base.html:44 main/templates/main/about.html:11
+#: main/templates/base.html:44
+msgid "Analysis"
+msgstr ""
+
+#: main/templates/base.html:45 main/templates/main/about.html:11
 msgid "About"
 msgstr "Über"
 
@@ -264,12 +268,16 @@ msgid ""
 msgstr ""
 
 #: main/templates/main/index.html:95
+msgid "Download Tweets"
+msgstr ""
+
+#: main/templates/main/index.html:98
 #, fuzzy
 #| msgid "Latest annotations"
 msgid "Download annotation"
 msgstr "Letzte Annotierungen"
 
-#: main/templates/main/index.html:98
+#: main/templates/main/index.html:101
 msgid ""
 "\n"
 "\n"
@@ -278,7 +286,7 @@ msgid ""
 "      "
 msgstr ""
 
-#: main/templates/main/index.html:107
+#: main/templates/main/index.html:110
 msgid ""
 "\n"
 "<p>\n"
@@ -288,11 +296,11 @@ msgid ""
 "using crowd-sourced annotation (blue).\n"
 msgstr ""
 
-#: main/templates/main/index.html:114
+#: main/templates/main/index.html:117
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/"
-"about#analysis'>Analysis</a> for more information).\n"
+"analysis'>Analysis</a> for more information).\n"
 msgstr ""
 
 #: twitter_annotator/settings.py:122
