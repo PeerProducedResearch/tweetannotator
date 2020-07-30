@@ -32,6 +32,10 @@ def about(request):
     return render(request, 'main/about.html')
 
 
+def analysis(request):
+    return render(request, 'main/analysis.html')
+
+
 def annotate(request, tweet_id, answer):
     tweet = Tweet.objects.get(id=tweet_id)
     ta = TweetAnnotation.objects.create(

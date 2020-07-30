@@ -59,7 +59,7 @@ def plot_symptoms_urgences_with_ma(urgences, all_tweets, symptom_tweets_df):
     layout = go.Layout(
         title="Evolution of mentions of symptoms and emergencies related to COVID in Ile-de-France ",
         legend={"x": 1.1, "y": 1},
-        yaxis=dict(title='Fraction of symptom tweets'),
+        yaxis=dict(title='Fraction of tweets with symptoms'),
         yaxis2=dict(
             title='Number of emergencies related to COVID',
             overlaying='y',
