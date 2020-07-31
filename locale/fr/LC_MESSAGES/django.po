@@ -1,0 +1,314 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Naïla El Haouari <naila.elhaouari@cri-paris.org>, 2020
+# Marc Santolini <marc.santolini@cri-paris.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-07-31 16:27+0000\n"
+"PO-Revision-Date: 2020-07-24 14:59+0000\n"
+"Last-Translator: Marc Santolini <marc.santolini@cri-paris.org>, 2020\n"
+"Language-Team: French (https://www.transifex.com/opencovid-survey/teams/111959/fr/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: main/templates/base.html:13
+msgid "Annotate tweets on COVID19"
+msgstr "Annotez des tweets sur Covid-19"
+
+#: main/templates/base.html:22
+msgid "COVID19 Tweet annotation"
+msgstr "Annotation de tweets sur Covid-19"
+
+#: main/templates/base.html:44
+msgid "Analysis"
+msgstr "Analyse"
+
+#: main/templates/base.html:47 main/templates/main/about.html:11
+msgid "About"
+msgstr "A propos"
+
+#: main/templates/main/about.html:13
+msgid ""
+"\n"
+"  This project is collaboration between the <a href=\"https://research.cri-paris.org/teampage?id=5cde7f999a474e4a9f93b281\">Interaction Data Lab</a>\n"
+"  and the <a href=\"https://research.cri-paris.org/teampage?id=5d809b499a474e063faa3a1a\">Peer-Produced Research Lab</a> of <a href=\"https://research.cri-paris.org\">CRI Paris</a>.\n"
+"  "
+msgstr ""
+"\n"
+"Ce project est une collaboration entre le <a href=\"https://research.cri-paris.org/teampage?id=5cde7f999a474e4a9f93b281\">Interaction Data Lab</a>\n"
+"et le <a href=\"https://research.cri-paris.org/teampage?id=5d809b499a474e063faa3a1a\">Peer-Produced Research Lab</a> au <a href=\"https://research.cri-paris.org\">CRI Paris</a>."
+
+#: main/templates/main/about.html:19
+msgid ""
+"\n"
+"  In this study, we provide a replicable, data-driven approach to investigate a potential second wave of the COVID pandemic.\n"
+"  In an open science spirit, we are particularly interested in how citizens can take part in research projects at all levels,\n"
+"  from crowdsourcing to machine learning algorithms.\n"
+"  "
+msgstr ""
+"\n"
+"  Dans cette étude, nous proposons une approche reproductible basée sur de larges jeux de données, pour étudier une éventuelle seconde vague de la pandémie de COVID.\n"
+" Dans un esprit d'ouverture scientifique, nous nous intéressons particulièrement à la manière dont les citoyens peuvent participer à de tels projets de recherche à tous les niveaux,\n"
+"du crowdsourcing aux algorithmes d'intelligence artificielle."
+
+#: main/templates/main/about.html:26
+msgid ""
+"\n"
+"  This is why we tried to open the products of this study as much as possible,\n"
+"  from downloadable labeling data to <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">directly editable notebooks through Binder</a>.\n"
+"  "
+msgstr ""
+"\n"
+"C'est pourquoi nous avons essayé d'ouvrir le plus possible les produits de cette étude,\n"
+"de données d'étiquetage téléchargeables à des <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">notebooks directement éditables via Binder</a>."
+
+#: main/templates/main/about.html:31
+msgid "Data & Privacy"
+msgstr "Protection des données"
+
+#: main/templates/main/about.html:33
+msgid ""
+"\n"
+"  We collected tweets specifically from users in Île-de-France.\n"
+"  We first used the Streaming API to identify users in the Paris area,\n"
+"  and then collected the historic data from these users.\n"
+"  This dashboard presents our analyses, based on 30,000 Twitter users,\n"
+"  for a total of about 33 million tweets from December 2019 (17 million without retweets).\n"
+"  "
+msgstr ""
+"\n"
+"Nous avons recueilli des tweets spécifiquement auprès d'utilisateurs d'Île-de-France.\n"
+"Nous avons d'abord utilisé l'API de streaming pour identifier les utilisateurs de la région parisienne,\n"
+"et avons ensuite recueilli les données historiques de ces utilisateurs.\n"
+"Ce tableau de bord présente nos analyses, basées sur 30 000 utilisateurs de Twitter,\n"
+"pour un total d'environ 33 millions de tweets à partir de décembre 2019 (17 millions sans retweets)."
+
+#: main/templates/main/about.html:42
+msgid ""
+"\n"
+"    For the number of passages to emergencies, we used public data from <a href=\"https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/\">Santé Publique France</a> about emergencies and SOS Médecins data related to COVID.\n"
+"    "
+msgstr ""
+"\n"
+"Pour le nombre de passages aux urgences, nous avons utilisé les données publiques de <a href=\"https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/\">Santé Publique France</a> sur les urgences et les données de SOS Médecins relatives au COVID."
+
+#: main/templates/main/about.html:47
+msgid ""
+"\n"
+"    This website does not store any personal identifiable information.\n"
+"    If you are annotating tweets, the only thing being stored is a random but\n"
+"    unique identifier tied to your current browser that will be associated with your annotations.\n"
+"    <br/>\n"
+"    "
+msgstr ""
+"\n"
+"Ce site web ne stocke aucune information personnelle identifiable.\n"
+"Si vous annotez des tweets, la seule chose qui est stockée est une information aléatoire mais\n"
+"identifiant unique lié à votre navigateur actuel qui sera associé à vos annotations.<br/>"
+
+#: main/templates/main/about.html:53
+msgid ""
+"\n"
+"    Additionally, this site's hoster <a href=\"https://www.heroku.com/\">Heroku</a> stores and gives us access to the IP addresses of visitors\n"
+"    and the pages visited on this site. These logs are stored by them for up to a week.\n"
+"    "
+msgstr ""
+"\n"
+"En outre, l'hébergeur de ce site, <a href=\"https://www.heroku.com/\">Heroku</a>, stocke et nous donne accès aux adresses IP des visiteurs\n"
+"et les pages visitées sur ce site. Ces journaux sont conservés par eux pendant une semaine au maximum."
+
+#: main/templates/main/about.html:61
+msgid "The Team"
+msgstr "L'équipe"
+
+#: main/templates/main/about.html:69
+msgid ""
+"\n"
+"          Team leader of the Interaction Data Lab, CRI\n"
+"           Research Fellow and Director of Research for Just One Giant Lab.\n"
+"          "
+msgstr ""
+
+#: main/templates/main/about.html:84
+msgid ""
+"\n"
+"          Team leader of the Peer-Produced Research Lab, CRI Research Fellow and\n"
+"          Director of Research for Open Humans.\n"
+"          "
+msgstr ""
+
+#: main/templates/main/about.html:102
+msgid ""
+"\n"
+"        Intern at the Interaction Data Lab.\n"
+"        "
+msgstr ""
+
+#: main/templates/main/about.html:116
+msgid ""
+"\n"
+"        Data Analytics and Tools team at the World Bank, visiting researcher at NYU Computer Science, and fellow at the MIT Medialab.\n"
+"        "
+msgstr ""
+
+#: main/templates/main/index.html:12
+msgid "Does this tweet contain self-reported COVID19 symptoms?"
+msgstr "Ce tweet contient-il des symptômes Covid-19 autodéclarés ?"
+
+#: main/templates/main/index.html:14
+msgid ""
+"\n"
+"        Symptoms can be about the person tweeting or someone they are referring to directly.\n"
+"        They should be current and not about past events.\n"
+"        If you are unsure about your annotation, hit the “<i>skip</i>” button.”\n"
+"        "
+msgstr ""
+"\n"
+"Les symptômes peuvent être liés à la personne qui tweete ou à une personne à laquelle elle fait directement référence.\n"
+"Ils doivent être actuels et ne pas concerner des événements passés.\n"
+"Si vous n'êtes pas sûr de votre annotation, cliquez sur le bouton <i>\"Suivant\"</i>\"."
+
+#: main/templates/main/index.html:30
+msgid "Yes"
+msgstr "Oui"
+
+#: main/templates/main/index.html:31
+msgid "No"
+msgstr "Non"
+
+#: main/templates/main/index.html:32
+msgid "skip"
+msgstr "Suivant"
+
+#: main/templates/main/index.html:39
+msgid ""
+"\n"
+"    <p>\n"
+"      In this study, we aim to create <strong>a model of how tweets about self-reported COVID19 symptoms\n"
+"      can help predict upcoming pandemic waves</strong>, and more generally the rise and fall of the disease.\n"
+"      To that end, we crawled public tweets from the Paris region filtered by symptoms keywords, and plotted them in time (see the graph below).\n"
+"    </p>\n"
+"    "
+msgstr ""
+"\n"
+"Dans cette étude, nous visons à créer un modèle de la façon dont les tweets sur les symptômes Covid-19 autodéclarés\n"
+"peuvent aider à prévoir les prochaines vagues de pandémie, et plus généralement la montée et la chute de la maladie.\n"
+"À cette fin, nous avons consulté les tweets publics de la région parisienne, filtrés par des mots-clés relatifs aux symptômes, et les avons analysés dans le temps (voir le graphique en bas de page)."
+
+#: main/templates/main/index.html:47
+msgid ""
+"\n"
+"      However, this filtering is very crude, e.g people don't only tweet about symptoms when they are currently falling sick,\n"
+"      but also about that one time a year ago when they fell sick, or when talking about the general news.\n"
+"      "
+msgstr ""
+"\n"
+"Cependant, ce filtrage est très grossier, par exemple les gens ne twittent pas seulement sur les symptômes lorsqu'ils sont en train de tomber malade,\n"
+"mais aussi à propos de moments passés où ils sont tombés malades, ou à propos de nouvelles générales."
+
+#: main/templates/main/index.html:53
+msgid ""
+"\n"
+"    To filter out such false-positives we need <strong>your</strong> help!\n"
+"    Which of these tweets are describing an acute symptom and which ones don't?\n"
+"    Your contribution will make a direct impact!\n"
+"    "
+msgstr ""
+"\n"
+"Pour filtrer ces faux positifs, nous avons besoin de <strong>votre</strong> aide !\n"
+"Lequel de ces tweets décrit un symptôme aigu et lequel ne le décrit pas ?\n"
+"Votre contribution aura un impact direct !"
+
+#: main/templates/main/index.html:60
+msgid ""
+"\n"
+"    If you want to learn more about the people behind this project you can <a href=\"/about\">visit our <i>About</i> page</a>.\n"
+"    "
+msgstr ""
+"\n"
+"Si vous souhaitez en savoir plus sur l'équipe à l'origine de ce projet, vous pouvez <a href=\"/about\">visiter notre page <i>À propos</i></a>."
+
+#: main/templates/main/index.html:67
+msgid "Latest annotations"
+msgstr "Dernière annotations"
+
+#: main/templates/main/index.html:74
+msgid "Annotation"
+msgstr "Annotation"
+
+#: main/templates/main/index.html:75
+msgid "date"
+msgstr "date"
+
+#: main/templates/main/index.html:89
+msgid ""
+"\n"
+"    Do you want to run your own data analyses?\n"
+"    You can download the current labeling (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
+"    "
+msgstr ""
+"\n"
+"Vous souhaitez effectuer vos propres analyses de données ?\n"
+"Vous pouvez télécharger les annotations actuelles (comprenant un identifieur unique UUID se rapportant à chaque session d'annotation) pour créer votre propre algorithme de filtrage ou d'apprentissage automatique."
+
+#: main/templates/main/index.html:95
+msgid "Download Tweets"
+msgstr "Télécharger les tweets"
+
+#: main/templates/main/index.html:98
+msgid "Download annotation"
+msgstr "Télécharger les annotations"
+
+#: main/templates/main/index.html:101
+msgid ""
+"\n"
+"\n"
+"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
+"      "
+msgstr ""
+"\n"
+"\n"
+"Veuillez visiter notre <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">page GitHub</a> si vous voulez contribuer !"
+
+#: main/templates/main/index.html:110
+msgid ""
+"\n"
+"<p>\n"
+"Below we visualise the number of tweets containing COVID19 symptoms using 7 days averaging windows,\n"
+"both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue).\n"
+msgstr ""
+"\n"
+"\n"
+"Ci-dessous, nous visualisons le nombre de tweets contenant des symptômes de COVID19 en utilisant une moyenne sur 7 jours,\n"
+"soit en utilisant notre système de filtrage simple basés sur les symptômes (orange), soit le filtrage amélioré utilisant des annotations provenant de l'annotation citoyenne (bleu).\n"
+
+#: main/templates/main/index.html:117
+msgid ""
+"\n"
+"We show as a reference the number of passages to emergencies (see <a href='/analysis'>Analysis</a> for more information).\n"
+msgstr ""
+"\n"
+"Nous indiquons comme référence le nombre de passages aux urgences (voir <a href='/analysis'>Analyse</a> pour plus d'informations).\n"
+
+#: twitter_annotator/settings.py:122
+msgid "English"
+msgstr "Anglais"
+
+#: twitter_annotator/settings.py:123
+msgid "French"
+msgstr "Français"
+
+#: twitter_annotator/settings.py:124
+msgid "German"
+msgstr "Allemand"
