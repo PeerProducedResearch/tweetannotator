@@ -8,23 +8,31 @@ from django.http import HttpResponse
 from .helpers import create_graph
 
 
-def get_random_tweet():
-    max_id = Tweet.objects.all().aggregate(max_id=Max("id"))['max_id']
-    while True:
-        pk = random.randint(1, max_id)
-        tweet = Tweet.objects.filter(pk=pk).first()
-        if tweet:
-            return tweet
+def get_random_tweet(uuid):
+    if TweetAnnotation.objects.filter(uuid=uuid).count() < 3:
+        tweets = Tweet.objects.exclude(
+            tweetannotation=None
+        ).exclude(tweetannotation__uuid=uuid)
+    else:
+        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
+    tl = len(tweets)
+    if tl == 0:
+        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
+        tl = len(tweets)
+    tweet_pos = random.randint(0,tl-1)
+    tweet = tweets[tweet_pos]
+    return tweet
 
 
 def index(request):
-    tweet = get_random_tweet()
+
+    if not request.session.get('uuid', ''):
+        request.session['uuid'] = str(uuid.uuid4())
+    tweet = get_random_tweet(request.session['uuid'])
     tweet.text = tweet.text.strip(";;")
     tweet_annotations = TweetAnnotation.objects.all().order_by('-created')[:5]
     context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
 
-    if not request.session.get('uuid', ''):
-        request.session['uuid'] = str(uuid.uuid4())
     return render(request, 'main/index.html', context)
 
 
