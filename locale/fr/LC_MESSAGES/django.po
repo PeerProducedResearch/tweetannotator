@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Naïla El Haouari <naila.elhaouari@cri-paris.org>, 2020
+# Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020
 # Marc Santolini <marc.santolini@cri-paris.org>, 2020
 # 
 #, fuzzy
@@ -139,6 +140,10 @@ msgid ""
 "           Research Fellow and Director of Research for Just One Giant Lab.\n"
 "          "
 msgstr ""
+"\n"
+"          Chef d'équipe du Interaction Data Lab au CRI Paris\n"
+"           et Directeur Recherche de Just One Giant Lab.\n"
+"          "
 
 #: main/templates/main/about.html:84
 msgid ""
@@ -147,6 +152,9 @@ msgid ""
 "          Director of Research for Open Humans.\n"
 "          "
 msgstr ""
+"\n"
+"Chef d'équipe du Peer-Produced Research Lab, CRI Research Fellow et\n"
+"Directeur de Recherche de Open Humans."
 
 #: main/templates/main/about.html:102
 msgid ""
@@ -154,6 +162,9 @@ msgid ""
 "        Intern at the Interaction Data Lab.\n"
 "        "
 msgstr ""
+"\n"
+"        Stagiaire au Interaction Data Lab.\n"
+"        "
 
 #: main/templates/main/about.html:116
 msgid ""
@@ -161,6 +172,9 @@ msgid ""
 "        Data Analytics and Tools team at the World Bank, visiting researcher at NYU Computer Science, and fellow at the MIT Medialab.\n"
 "        "
 msgstr ""
+"\n"
+"        Membre de l'équipe Data Analytics and Tools à la Banque Mondiale, chercheur affilié à NYU Computer Science, and fellow du MIT Medialab.\n"
+"        "
 
 #: main/templates/main/index.html:12
 msgid "Does this tweet contain self-reported COVID19 symptoms?"
