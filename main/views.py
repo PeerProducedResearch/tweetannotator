@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect
 import uuid
 import random
 from .models import Tweet, TweetAnnotation
-from django.db.models import Max
 from django.http import HttpResponse
 # Create your views here.
 from .helpers import create_graph
