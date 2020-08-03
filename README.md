@@ -4,7 +4,7 @@ A simple _Django_ website that allows people to annotate which crawled tweets th
 
 - Download all the annotations being done by the crowd
 - Get live updates on how the annotations change the predictions and correlations to COVID-19 symptom reports
-- Access the original notebooks for the analyses and run them directly in [MyBinder]
+- [Access the original notebooks for the analyses](https://github.com/InteractionDataLab/covid-twitter-analysis/) and [run them directly in MyBinder](https://mybinder.org/v2/gh/InteractionDataLab/covid-twitter-analysis/master?filepath=notebooks%2Fcovid-analyses.ipynb).
 
 ## Setup
 
