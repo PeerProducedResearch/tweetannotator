@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 16:27+0000\n"
+"POT-Creation-Date: 2020-08-03 13:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -140,7 +140,8 @@ msgstr ""
 #: main/templates/main/about.html:102
 msgid ""
 "\n"
-"        Intern at the Interaction Data Lab.\n"
+"        ENSAE Student in Data Science and Social Science. Intern at "
+"Interaction Data Lab\n"
 "        "
 msgstr ""
 
@@ -177,6 +178,10 @@ msgstr ""
 
 #: main/templates/main/index.html:32
 msgid "skip"
+msgstr ""
+
+#: main/templates/main/index.html:38
+msgid "What is this about?"
 msgstr ""
 
 #: main/templates/main/index.html:39
@@ -258,6 +263,10 @@ msgid ""
 "      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-"
 "twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
 "      "
+msgstr ""
+
+#: main/templates/main/index.html:109
+msgid "Visualization"
 msgstr ""
 
 #: main/templates/main/index.html:110

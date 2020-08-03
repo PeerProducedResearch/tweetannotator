@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Naïla El Haouari <naila.elhaouari@cri-paris.org>, 2020
-# Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020
 # Marc Santolini <marc.santolini@cri-paris.org>, 2020
+# Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 16:27+0000\n"
+"POT-Creation-Date: 2020-08-03 13:42+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
-"Last-Translator: Marc Santolini <marc.santolini@cri-paris.org>, 2020\n"
+"Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/opencovid-survey/teams/111959/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -159,11 +159,11 @@ msgstr ""
 #: main/templates/main/about.html:102
 msgid ""
 "\n"
-"        Intern at the Interaction Data Lab.\n"
+"        ENSAE Student in Data Science and Social Science. Intern at Interaction Data Lab\n"
 "        "
 msgstr ""
 "\n"
-"        Stagiaire au Interaction Data Lab.\n"
+"Étudiante à l'ENSAE en Data Science et Sciences Sociales. Stagiaire au Interaction Data Lab.\n"
 "        "
 
 #: main/templates/main/about.html:116
@@ -204,6 +204,10 @@ msgstr "Non"
 #: main/templates/main/index.html:32
 msgid "skip"
 msgstr "Suivant"
+
+#: main/templates/main/index.html:38
+msgid "What is this about?"
+msgstr "De quoi s'agit-il ?"
 
 #: main/templates/main/index.html:39
 msgid ""
@@ -294,6 +298,10 @@ msgstr ""
 "\n"
 "\n"
 "Veuillez visiter notre <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">page GitHub</a> si vous voulez contribuer !"
+
+#: main/templates/main/index.html:109
+msgid "Visualization"
+msgstr "Visualisation"
 
 #: main/templates/main/index.html:110
 msgid ""

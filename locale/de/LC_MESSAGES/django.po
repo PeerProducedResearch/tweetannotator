@@ -2,24 +2,23 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 # Translators:
 # Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-07-31 16:27+0000\n"
+"POT-Creation-Date: 2020-08-03 13:42+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
 "Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
-"Language-Team: German (https://www.transifex.com/opencovid-survey/"
-"teams/111959/de/)\n"
-"Language: de\n"
+"Language-Team: German (https://www.transifex.com/opencovid-survey/teams/111959/de/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: main/templates/base.html:13
@@ -41,35 +40,34 @@ msgstr "Über"
 #: main/templates/main/about.html:13
 msgid ""
 "\n"
-"  This project is collaboration between the <a href=\"https://research.cri-"
-"paris.org/teampage?id=5cde7f999a474e4a9f93b281\">Interaction Data Lab</a>\n"
-"  and the <a href=\"https://research.cri-paris.org/teampage?"
-"id=5d809b499a474e063faa3a1a\">Peer-Produced Research Lab</a> of <a href="
-"\"https://research.cri-paris.org\">CRI Paris</a>.\n"
+"  This project is collaboration between the <a href=\"https://research.cri-paris.org/teampage?id=5cde7f999a474e4a9f93b281\">Interaction Data Lab</a>\n"
+"  and the <a href=\"https://research.cri-paris.org/teampage?id=5d809b499a474e063faa3a1a\">Peer-Produced Research Lab</a> of <a href=\"https://research.cri-paris.org\">CRI Paris</a>.\n"
 "  "
 msgstr ""
+"\n"
+"Dieses Projekt ist eine Kollaboration zwischem dem <a href=\"https://research.cri-paris.org/teampage?id=5cde7f999a474e4a9f93b281\">Interaction Data Lab</a> und dem <a href=\"https://research.cri-paris.org/teampage?id=5d809b499a474e063faa3a1a\">Peer-Produced Research Lab</a> des <a href=\"https://research.cri-paris.org\">CRI Paris</a>."
 
 #: main/templates/main/about.html:19
 msgid ""
 "\n"
-"  In this study, we provide a replicable, data-driven approach to "
-"investigate a potential second wave of the COVID pandemic.\n"
-"  In an open science spirit, we are particularly interested in how citizens "
-"can take part in research projects at all levels,\n"
+"  In this study, we provide a replicable, data-driven approach to investigate a potential second wave of the COVID pandemic.\n"
+"  In an open science spirit, we are particularly interested in how citizens can take part in research projects at all levels,\n"
 "  from crowdsourcing to machine learning algorithms.\n"
 "  "
 msgstr ""
+"\n"
+"In dieser Studie stellen wir einen replizierbaren und Daten-basierten Ansatz bereit um eine eventuelle zweite Welle der COVID-Pandemie zu untersuchen.\n"
+"Im Geiste der \"offenen Wissenschaft\" sind wir insbesondere daran interessiert wie Bürger an allen Aspekten der Forschung teilnehmen können, von Crowdsourcing bishin zu den Algorithmen."
 
 #: main/templates/main/about.html:26
 msgid ""
 "\n"
-"  This is why we tried to open the products of this study as much as "
-"possible,\n"
-"  from downloadable labeling data to <a href=\"https://github.com/"
-"InteractionDataLab/covid-twitter-analysis\">directly editable notebooks "
-"through Binder</a>.\n"
+"  This is why we tried to open the products of this study as much as possible,\n"
+"  from downloadable labeling data to <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">directly editable notebooks through Binder</a>.\n"
 "  "
 msgstr ""
+"\n"
+"Daher haben wir versucht alle Produkte die aus unserer Forschung kommen so offen wie möglich zu machen. Dies beinhaltet eine offene Veröffentlichung der crowdgesourcten Labels und <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">die direkt editierbaren Analyse-Notebooks mit Binder</a>."
 
 #: main/templates/main/about.html:31
 msgid "Data & Privacy"
@@ -82,30 +80,28 @@ msgid ""
 "  We first used the Streaming API to identify users in the Paris area,\n"
 "  and then collected the historic data from these users.\n"
 "  This dashboard presents our analyses, based on 30,000 Twitter users,\n"
-"  for a total of about 33 million tweets from December 2019 (17 million "
-"without retweets).\n"
+"  for a total of about 33 million tweets from December 2019 (17 million without retweets).\n"
 "  "
 msgstr ""
+"\n"
+"Wir haben Tweets von Benutzern aus Île-de-France gesammelt. Über die Twitter-Streaming-API haben wir Benutzer aus der Pariser Region identifiziert und die historischen Daten dieser Benutzer gesammelt. \n"
+"Dieses Dashboard presentiert die Analysen die auf 30,000 Twitter-Benutzern basieren und in etwa 33 Millionen Tweets seit Dezember 2019 enthalten (17 Millionen ohne Retweets)."
 
 #: main/templates/main/about.html:42
 msgid ""
 "\n"
-"    For the number of passages to emergencies, we used public data from <a "
-"href=\"https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-"
-"hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/\">Santé "
-"Publique France</a> about emergencies and SOS Médecins data related to "
-"COVID.\n"
+"    For the number of passages to emergencies, we used public data from <a href=\"https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/\">Santé Publique France</a> about emergencies and SOS Médecins data related to COVID.\n"
 "    "
 msgstr ""
+"\n"
+"Die Zahl der Fälle in Notaufnahmen stammen von den öffentlichen Daten von <a href=\"https://www.data.gouv.fr/fr/datasets/donnees-des-urgences-hospitalieres-et-de-sos-medecins-relatives-a-lepidemie-de-covid-19/\">Santé Publique France</a> und SOS Médecins im Zusammenhang mit COVID."
 
 #: main/templates/main/about.html:47
 msgid ""
 "\n"
 "    This website does not store any personal identifiable information.\n"
-"    If you are annotating tweets, the only thing being stored is a random "
-"but\n"
-"    unique identifier tied to your current browser that will be associated "
-"with your annotations.\n"
+"    If you are annotating tweets, the only thing being stored is a random but\n"
+"    unique identifier tied to your current browser that will be associated with your annotations.\n"
 "    <br/>\n"
 "    "
 msgstr ""
@@ -113,16 +109,14 @@ msgstr ""
 #: main/templates/main/about.html:53
 msgid ""
 "\n"
-"    Additionally, this site's hoster <a href=\"https://www.heroku.com/"
-"\">Heroku</a> stores and gives us access to the IP addresses of visitors\n"
-"    and the pages visited on this site. These logs are stored by them for up "
-"to a week.\n"
+"    Additionally, this site's hoster <a href=\"https://www.heroku.com/\">Heroku</a> stores and gives us access to the IP addresses of visitors\n"
+"    and the pages visited on this site. These logs are stored by them for up to a week.\n"
 "    "
 msgstr ""
 
 #: main/templates/main/about.html:61
 msgid "The Team"
-msgstr ""
+msgstr "Das Team"
 
 #: main/templates/main/about.html:69
 msgid ""
@@ -135,8 +129,7 @@ msgstr ""
 #: main/templates/main/about.html:84
 msgid ""
 "\n"
-"          Team leader of the Peer-Produced Research Lab, CRI Research Fellow "
-"and\n"
+"          Team leader of the Peer-Produced Research Lab, CRI Research Fellow and\n"
 "          Director of Research for Open Humans.\n"
 "          "
 msgstr ""
@@ -144,34 +137,32 @@ msgstr ""
 #: main/templates/main/about.html:102
 msgid ""
 "\n"
-"        Intern at the Interaction Data Lab.\n"
+"        ENSAE Student in Data Science and Social Science. Intern at Interaction Data Lab\n"
 "        "
 msgstr ""
 
 #: main/templates/main/about.html:116
 msgid ""
 "\n"
-"        Data Analytics and Tools team at the World Bank, visiting researcher "
-"at NYU Computer Science, and fellow at the MIT Medialab.\n"
+"        Data Analytics and Tools team at the World Bank, visiting researcher at NYU Computer Science, and fellow at the MIT Medialab.\n"
 "        "
 msgstr ""
 
 #: main/templates/main/index.html:12
-#, fuzzy
-#| msgid "Does this tweet contain symptoms?"
 msgid "Does this tweet contain self-reported COVID19 symptoms?"
-msgstr "Enthält dieser Tweet Symptome?"
+msgstr "Enthält dieser Tweet selbsteingeschätzte  COVID-19 Symptome?"
 
 #: main/templates/main/index.html:14
 msgid ""
 "\n"
-"        Symptoms can be about the person tweeting or someone they are "
-"referring to directly.\n"
+"        Symptoms can be about the person tweeting or someone they are referring to directly.\n"
 "        They should be current and not about past events.\n"
-"        If you are unsure about your annotation, hit the “<i>skip</i>” "
-"button.”\n"
+"        If you are unsure about your annotation, hit the “<i>skip</i>” button.”\n"
 "        "
 msgstr ""
+"\n"
+"Symptome können die Person die tweetet betreffen oder jemanden über den sie tweeten. \n"
+"Sie sollten aktuelle Symptome beschreiben und keine älteren Ereignisse betreffen. Falls sie sich unsicher sind können sie den <i>überspringen</i> Knopf drücken."
 
 #: main/templates/main/index.html:30
 msgid "Yes"
@@ -185,103 +176,68 @@ msgstr "Nein"
 msgid "skip"
 msgstr "Überspringen"
 
+#: main/templates/main/index.html:38
+msgid "What is this about?"
+msgstr ""
+
 #: main/templates/main/index.html:39
 msgid ""
 "\n"
 "    <p>\n"
-"      In this study, we aim to create <strong>a model of how tweets about "
-"self-reported COVID19 symptoms\n"
-"      can help predict upcoming pandemic waves</strong>, and more generally "
-"the rise and fall of the disease.\n"
-"      To that end, we crawled public tweets from the Paris region filtered "
-"by symptoms keywords, and plotted them in time (see the graph below).\n"
+"      In this study, we aim to create <strong>a model of how tweets about self-reported COVID19 symptoms\n"
+"      can help predict upcoming pandemic waves</strong>, and more generally the rise and fall of the disease.\n"
+"      To that end, we crawled public tweets from the Paris region filtered by symptoms keywords, and plotted them in time (see the graph below).\n"
 "    </p>\n"
 "    "
 msgstr ""
 
 #: main/templates/main/index.html:47
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "    <p>\n"
-#| "      We are trying to create a model of how tweets about symptoms can "
-#| "predict\n"
-#| "      the general rise and fall of a disease. To that end we crawled "
-#| "public tweets from\n"
-#| "      location X and plotted them (see our graph). But of course people "
-#| "don't only tweet about symptoms\n"
-#| "      when they are currently falling sick, but also about that one time "
-#| "a year ago when they fell sick, or\n"
-#| "      when talking about the general news.\n"
-#| "      "
 msgid ""
 "\n"
-"      However, this filtering is very crude, e.g people don't only tweet "
-"about symptoms when they are currently falling sick,\n"
-"      but also about that one time a year ago when they fell sick, or when "
-"talking about the general news.\n"
+"      However, this filtering is very crude, e.g people don't only tweet about symptoms when they are currently falling sick,\n"
+"      but also about that one time a year ago when they fell sick, or when talking about the general news.\n"
 "      "
 msgstr ""
 "\n"
-"Wir versuchen ein Modell dazu zu erstellen wie Tweets über Symptome den "
-"generallen Anstieg und Fall einer Krankheit vorhersagen können. Daher haben "
-"wir öffentliche Tweets vom Ort X gesammelt und visualisiert (siehe unten). "
-"Menschen twittern natürlich nicht nur über ihre eigenen und aktuellen "
-"Symptome, sondern auch über Nachrichtenberichte oder vergangene Krankheiten."
+"Diese Filter sind allerdings sehr grob. Zum Beispiel, Menschen twittern nicht nur über Symptome wenn sie selbst gerade krank werden, sondern auch über vergangene Krankheiten oder im Zusammenhang mit Nachrichtenmeldungen."
 
 #: main/templates/main/index.html:53
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "    To filter out such false-positives we need <strong>your</strong> "
-#| "help!\n"
-#| "    Which of those tweets are actually about describing an acute symptom "
-#| "and which ones don't? Your contribution makes a\n"
-#| "    direct impact!\n"
-#| "    "
 msgid ""
 "\n"
 "    To filter out such false-positives we need <strong>your</strong> help!\n"
-"    Which of these tweets are describing an acute symptom and which ones "
-"don't?\n"
+"    Which of these tweets are describing an acute symptom and which ones don't?\n"
 "    Your contribution will make a direct impact!\n"
 "    "
 msgstr ""
 "\n"
-"Um solche falsch-positiven Tweets herauszufiltern benötigen wir "
-"<strong>ihre</strong> Hilfe! Welche dieser Tweets beschreiben tatsächlich "
-"aktuelle Symptome und welche nicht? Ihr Beitrag hat eine unmittelbaren "
-"Auswirkung."
+"Um diese falsch-positiven Meldungen herauszufiltern benötigen wir <strong>ihre</strong> Hilfe. Welche dieser Tweets beschreiben akute Symptome und welche nicht? Ihr Beitrag hat einen direkten Einfluss auf die Ergebnisse!"
 
 #: main/templates/main/index.html:60
 msgid ""
 "\n"
-"    If you want to learn more about the people behind this project you can "
-"<a href=\"/about\">visit our <i>About</i> page</a>.\n"
+"    If you want to learn more about the people behind this project you can <a href=\"/about\">visit our <i>About</i> page</a>.\n"
 "    "
 msgstr ""
+"\n"
+"Wenn sie mehr über die Menschen hinter diesem Projekt wissen wollen können sie <a href=\"/about\">unsere <i>Team-Seite</i> besuchen</a>."
 
 #: main/templates/main/index.html:67
 msgid "Latest annotations"
 msgstr "Letzte Annotierungen"
 
 #: main/templates/main/index.html:74
-#, fuzzy
-#| msgid "Latest annotations"
 msgid "Annotation"
-msgstr "Letzte Annotierungen"
+msgstr "Annotierung"
 
 #: main/templates/main/index.html:75
 msgid "date"
-msgstr ""
+msgstr "Datum"
 
 #: main/templates/main/index.html:89
 msgid ""
 "\n"
 "    Do you want to run your own data analyses?\n"
-"    You can download the current labeling (including a UUID referring to "
-"each annotator session) to create your own filtering or machine learning "
-"algorithm.\n"
+"    You can download the current labeling (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
 "    "
 msgstr ""
 
@@ -290,35 +246,37 @@ msgid "Download Tweets"
 msgstr ""
 
 #: main/templates/main/index.html:98
-#, fuzzy
-#| msgid "Latest annotations"
 msgid "Download annotation"
-msgstr "Letzte Annotierungen"
+msgstr "Annotation herunterladen"
 
 #: main/templates/main/index.html:101
 msgid ""
 "\n"
 "\n"
-"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-"
-"twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
+"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
 "      "
+msgstr ""
+"\n"
+"Bitte besuchen sie <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">unser GitHub Repository</a> falls sie zu unserer Forschung beitragen wollen."
+
+#: main/templates/main/index.html:109
+msgid "Visualization"
 msgstr ""
 
 #: main/templates/main/index.html:110
 msgid ""
 "\n"
 "<p>\n"
-"Below we visualise the number of tweets containing COVID19 symptoms using 7 "
-"days averaging windows,\n"
-"both using our simple filtering system (orange), or the improved filtering "
-"using crowd-sourced annotation (blue).\n"
+"Below we visualise the number of tweets containing COVID19 symptoms using 7 days averaging windows,\n"
+"both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue).\n"
 msgstr ""
+"\n"
+"<p>Hier visualisieren wir die Anzahl an Tweets die COVID-19 Symptome enthalten, normalisiert in einem 7-Tages-Fenster, sowohl für unser simples Filtersystem (orange) und das verbesserte Filtern mit der Crowdsourcing-Annotierung (blau).\n"
 
 #: main/templates/main/index.html:117
 msgid ""
 "\n"
-"We show as a reference the number of passages to emergencies (see <a href='/"
-"analysis'>Analysis</a> for more information).\n"
+"We show as a reference the number of passages to emergencies (see <a href='/analysis'>Analysis</a> for more information).\n"
 msgstr ""
 
 #: twitter_annotator/settings.py:122
@@ -332,46 +290,3 @@ msgstr "Französisch"
 #: twitter_annotator/settings.py:124
 msgid "German"
 msgstr "Deutsch"
-
-#~ msgid "Spanish"
-#~ msgstr "Spanisch"
-
-#~ msgid "Tweets symptoms unfiltered"
-#~ msgstr "Tweets mit Symptomen (ungefiltert)"
-
-#~ msgid "Tweets symptoms unfiltered (avg 3d)"
-#~ msgstr "Tweets my Symptomen (ungefiltert, 3-Tages-Schnitt)"
-
-#~ msgid "Tweets symptoms filtered"
-#~ msgstr "Tweets mit Symptomen (gefiltert)"
-
-#~ msgid "Tweets symptoms filtered (avg 3d)"
-#~ msgstr "Tweets mit Symptomen (gefiltert, 3-Tages-Schnitt)"
-
-#~ msgid "Passages to emergencies"
-#~ msgstr "Überweisungen in die Notaufnahme"
-
-#~ msgid "Passages to emergencies (avg 3d)"
-#~ msgstr "Überweisungen in die Notaufnahme (3-Tages-Schnitt)"
-
-#~ msgid ""
-#~ "Evolution of mentions of symptoms and emergencies related to COVID in Ile-"
-#~ "de-France "
-#~ msgstr ""
-#~ "Evolution von Erwähnungen von Symptomen und Notfällen im Zusammenhang mit "
-#~ "COVID in Ile-de-France"
-
-#~ msgid "Number of tweets"
-#~ msgstr "Anzahl an Tweets"
-
-#~ msgid "Number of emergencies related to COVID"
-#~ msgstr "Anzahl an Notaufnahmen im Zusammenhang mit COVID"
-
-#~ msgid "Lockdown (France)"
-#~ msgstr "Ausgangssperre in Frankreich"
-
-#~ msgid "Symptom"
-#~ msgstr "Symptom?"
-
-#~ msgid "added at"
-#~ msgstr "hinzugefügt am"
