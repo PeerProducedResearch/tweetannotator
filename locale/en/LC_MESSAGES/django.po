@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 13:42+0000\n"
+"POT-Creation-Date: 2020-08-04 11:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -230,46 +230,52 @@ msgstr ""
 msgid "Latest annotations"
 msgstr ""
 
-#: main/templates/main/index.html:74
+#: main/templates/main/index.html:73
 msgid "Annotation"
 msgstr ""
 
-#: main/templates/main/index.html:75
+#: main/templates/main/index.html:74
 msgid "date"
 msgstr ""
 
-#: main/templates/main/index.html:89
+#: main/templates/main/index.html:87
 msgid ""
 "\n"
-"    Do you want to run your own data analyses?\n"
-"    You can download the current labeling (including a UUID referring to "
-"each annotator session) to create your own filtering or machine learning "
-"algorithm.\n"
+"    <h4>Do you want to run your own data analyses?</h4>\n"
+"    "
+msgstr ""
+
+#: main/templates/main/index.html:92
+#, python-format
+msgid ""
+"\n"
+"    You can download all %(annotation_count)s annotations (including a UUID "
+"referring to each annotator session) to create your own filtering or machine "
+"learning algorithm.\n"
 "    "
 msgstr ""
 
 #: main/templates/main/index.html:95
+msgid ""
+"\n"
+"    Please visit our <a href=\"https://github.com/InteractionDataLab/covid-"
+"twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
+"    "
+msgstr ""
+
+#: main/templates/main/index.html:100
 msgid "Download Tweets"
 msgstr ""
 
-#: main/templates/main/index.html:98
-msgid "Download annotation"
-msgstr ""
-
 #: main/templates/main/index.html:101
-msgid ""
-"\n"
-"\n"
-"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-"
-"twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
-"      "
+msgid "Download Annotation"
 msgstr ""
 
-#: main/templates/main/index.html:109
+#: main/templates/main/index.html:107
 msgid "Visualization"
 msgstr ""
 
-#: main/templates/main/index.html:110
+#: main/templates/main/index.html:108
 msgid ""
 "\n"
 "<p>\n"
@@ -279,7 +285,7 @@ msgid ""
 "using crowd-sourced annotation (blue).\n"
 msgstr ""
 
-#: main/templates/main/index.html:117
+#: main/templates/main/index.html:115
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 13:42+0000\n"
+"POT-Creation-Date: 2020-08-04 11:24+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
 "Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
 "Language-Team: German (https://www.transifex.com/opencovid-survey/teams/111959/de/)\n"
@@ -225,45 +225,49 @@ msgstr ""
 msgid "Latest annotations"
 msgstr "Letzte Annotierungen"
 
-#: main/templates/main/index.html:74
+#: main/templates/main/index.html:73
 msgid "Annotation"
 msgstr "Annotierung"
 
-#: main/templates/main/index.html:75
+#: main/templates/main/index.html:74
 msgid "date"
 msgstr "Datum"
 
-#: main/templates/main/index.html:89
+#: main/templates/main/index.html:87
 msgid ""
 "\n"
-"    Do you want to run your own data analyses?\n"
-"    You can download the current labeling (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
+"    <h4>Do you want to run your own data analyses?</h4>\n"
+"    "
+msgstr ""
+
+#: main/templates/main/index.html:92
+#, python-format
+msgid ""
+"\n"
+"    You can download all %(annotation_count)s annotations (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
 "    "
 msgstr ""
 
 #: main/templates/main/index.html:95
+msgid ""
+"\n"
+"    Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
+"    "
+msgstr ""
+
+#: main/templates/main/index.html:100
 msgid "Download Tweets"
 msgstr ""
 
-#: main/templates/main/index.html:98
-msgid "Download annotation"
-msgstr "Annotation herunterladen"
-
 #: main/templates/main/index.html:101
-msgid ""
-"\n"
-"\n"
-"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
-"      "
+msgid "Download Annotation"
 msgstr ""
-"\n"
-"Bitte besuchen sie <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">unser GitHub Repository</a> falls sie zu unserer Forschung beitragen wollen."
 
-#: main/templates/main/index.html:109
+#: main/templates/main/index.html:107
 msgid "Visualization"
 msgstr ""
 
-#: main/templates/main/index.html:110
+#: main/templates/main/index.html:108
 msgid ""
 "\n"
 "<p>\n"
@@ -273,7 +277,7 @@ msgstr ""
 "\n"
 "<p>Hier visualisieren wir die Anzahl an Tweets die COVID-19 Symptome enthalten, normalisiert in einem 7-Tages-Fenster, sowohl für unser simples Filtersystem (orange) und das verbesserte Filtern mit der Crowdsourcing-Annotierung (blau).\n"
 
-#: main/templates/main/index.html:117
+#: main/templates/main/index.html:115
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/analysis'>Analysis</a> for more information).\n"

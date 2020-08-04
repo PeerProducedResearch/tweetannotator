@@ -30,7 +30,11 @@ def index(request):
     tweet = get_random_tweet(request.session['uuid'])
     tweet.text = tweet.text.strip(";;")
     tweet_annotations = TweetAnnotation.objects.all().order_by('-created')[:5]
-    context = {'tweet': tweet, 'tweet_annotations': tweet_annotations}
+    annotation_count = TweetAnnotation.objects.all().count()
+    context = {
+        'tweet': tweet,
+        'tweet_annotations': tweet_annotations,
+        'annotation_count': annotation_count}
 
     return render(request, 'main/index.html', context)
 

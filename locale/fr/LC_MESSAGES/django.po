@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-03 13:42+0000\n"
+"POT-Creation-Date: 2020-08-04 11:24+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
 "Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/opencovid-survey/teams/111959/fr/)\n"
@@ -261,49 +261,55 @@ msgstr ""
 msgid "Latest annotations"
 msgstr "Dernière annotations"
 
-#: main/templates/main/index.html:74
+#: main/templates/main/index.html:73
 msgid "Annotation"
 msgstr "Annotation"
 
-#: main/templates/main/index.html:75
+#: main/templates/main/index.html:74
 msgid "date"
 msgstr "date"
 
-#: main/templates/main/index.html:89
+#: main/templates/main/index.html:87
 msgid ""
 "\n"
-"    Do you want to run your own data analyses?\n"
-"    You can download the current labeling (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
+"    <h4>Do you want to run your own data analyses?</h4>\n"
 "    "
 msgstr ""
 "\n"
-"Vous souhaitez effectuer vos propres analyses de données ?\n"
-"Vous pouvez télécharger les annotations actuelles (comprenant un identifieur unique UUID se rapportant à chaque session d'annotation) pour créer votre propre algorithme de filtrage ou d'apprentissage automatique."
+"<h4>Vous souhaitez effectuer vos propres analyses de données ?</h4>"
 
-#: main/templates/main/index.html:95
-msgid "Download Tweets"
-msgstr "Télécharger les tweets"
-
-#: main/templates/main/index.html:98
-msgid "Download annotation"
-msgstr "Télécharger les annotations"
-
-#: main/templates/main/index.html:101
+#: main/templates/main/index.html:92
+#, python-format
 msgid ""
 "\n"
-"\n"
-"      Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
-"      "
+"    You can download all %(annotation_count)s annotations (including a UUID referring to each annotator session) to create your own filtering or machine learning algorithm.\n"
+"    "
 msgstr ""
 "\n"
+"Vous pouvez télécharger les %(annotation_count)s annotations actuelles (comprenant un identifieur unique UUID se rapportant à chaque session d'annotation) pour créer votre propre algorithme de filtrage ou d'apprentissage automatique."
+
+#: main/templates/main/index.html:95
+msgid ""
+"\n"
+"    Please visit our <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">GitHub repository</a> if you want to contribute!\n"
+"    "
+msgstr ""
 "\n"
 "Veuillez visiter notre <a href=\"https://github.com/InteractionDataLab/covid-twitter-analysis\">page GitHub</a> si vous voulez contribuer !"
 
-#: main/templates/main/index.html:109
+#: main/templates/main/index.html:100
+msgid "Download Tweets"
+msgstr "Télécharger les tweets"
+
+#: main/templates/main/index.html:101
+msgid "Download Annotation"
+msgstr "Télécharger les annotations"
+
+#: main/templates/main/index.html:107
 msgid "Visualization"
 msgstr "Visualisation"
 
-#: main/templates/main/index.html:110
+#: main/templates/main/index.html:108
 msgid ""
 "\n"
 "<p>\n"
@@ -315,7 +321,7 @@ msgstr ""
 "Ci-dessous, nous visualisons le nombre de tweets contenant des symptômes de COVID19 en utilisant une moyenne sur 7 jours,\n"
 "soit en utilisant notre système de filtrage simple basés sur les symptômes (orange), soit le filtrage amélioré utilisant des annotations provenant de l'annotation citoyenne (bleu).\n"
 
-#: main/templates/main/index.html:117
+#: main/templates/main/index.html:115
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/analysis'>Analysis</a> for more information).\n"
