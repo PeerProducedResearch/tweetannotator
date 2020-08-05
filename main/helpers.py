@@ -23,6 +23,7 @@ def df_from_tweets(only_symptoms=False):
     idx = pd.date_range(adf.index[0], adf.index[-1])
     adf = adf.reindex(idx, fill_value=0)
     adf = adf.reset_index()
+    print(adf)
     return adf
 
 
@@ -38,14 +39,14 @@ def create_graph():
 def plot_symptoms_urgences_with_ma(urgences, all_tweets, symptom_tweets_df):
     traces = []
     traces.append(go.Scatter(
-        x=all_tweets['date'],
+        x=all_tweets['index'],
         y=all_tweets['has_symptom_mean_3'].values,
         mode='lines',
         line=dict(color='orange'),
         name='Tweets symptoms unfiltered (avg 7d)',
         yaxis="y1"))
     traces.append(go.Scatter(
-        x=symptom_tweets_df['date'],
+        x=symptom_tweets_df['index'],
         y=symptom_tweets_df['has_symptom_mean_3'].values,
         mode='lines',
         line=dict(color='blue'),
