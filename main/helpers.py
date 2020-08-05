@@ -19,10 +19,9 @@ def df_from_tweets(only_symptoms=False):
     df['date'] = pd.to_datetime(df['date'])
     adf = df.groupby(['date']).count()
     adf = adf.apply(lambda x: x/adf['has_symptom'].sum())
-    print(adf)
-    print(adf['has_symptom'].sum())
     adf['has_symptom_mean_3'] = adf.rolling('7d').mean()['has_symptom']
-    print(adf['has_symptom_mean_3'].sum())
+    idx = pd.date_range(adf.index[0], adf.index[-1])
+    adf = adf.reindex(idx, fill_value=0)
     adf = adf.reset_index()
     return adf
 
