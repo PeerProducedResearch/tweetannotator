@@ -7,10 +7,13 @@ class Command(BaseCommand):
     help = "Import tweets from a file"
 
     def handle(self, *args, **options):
-        df = pd.read_csv('static/list_covid_symptoms.testing.csv', sep=";")
+        df = pd.read_csv('static/list_covid_symptoms.testing.2.csv', sep=";")
         for i, row in df.iterrows():
-            t, _ = Tweet.objects.get_or_create(
-                text=row['anonymized_text'],
-                tweet_id=row['id_str'],
-                date=row['day'])
-            t.save()
+            if Tweet.objects.filter(tweet_id=row['id_str']).count() == 0:
+                t, _ = Tweet.objects.get_or_create(
+                    text=row['anonymized_text'],
+                    tweet_id=row['id_str'],
+                    date=row['day'])
+                t.save()
+            else:
+                print('duplicate!')
