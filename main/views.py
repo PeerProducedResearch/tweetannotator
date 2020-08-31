@@ -5,7 +5,7 @@ from .models import Tweet, TweetAnnotation
 from django.http import HttpResponse
 # Create your views here.
 from .helpers import create_graph
-import csv
+import pandas as pd
 
 from django.http import StreamingHttpResponse
 
@@ -76,17 +76,7 @@ def graph(request):
 
 
 def download_annotations(requests):
-    rows = [["tweet_id", "symptom", "uuid", "timestamp"]]
-    for i in TweetAnnotation.objects.all():
-        rows.append(
-            [
-                i.tweet.tweet_id,
-                i.symptom,
-                i.uuid,
-                i.created
-                ])
-    pseudo_buffer = Echo()
-    writer = csv.writer(pseudo_buffer, delimiter=';')
-    response = StreamingHttpResponse((writer.writerow(row) for row in rows), content_type='text/csv')
+    data = pd.DataFrame.from_records(TweetAnnotation.objects.all().values_list('tweet__tweet_id','symptom','uuid','created'),columns=['tweet_id','symptom','uuid','timestamp'])
+    response = HttpResponse(data.to_csv(sep=';', index=False), content_type='text/csv')
     response['Content-Disposition'] = "attachment; filename=%s" % "annotations.csv"
     return response
