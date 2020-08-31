@@ -5,6 +5,19 @@ from .models import Tweet, TweetAnnotation
 from django.http import HttpResponse
 # Create your views here.
 from .helpers import create_graph
+import csv
+
+from django.http import StreamingHttpResponse
+
+
+class Echo:
+    """An object that implements just the write method of the file-like
+    interface.
+    """
+    def write(self, value):
+        """Write the value by returning it, instead of storing in a buffer."""
+        return value
+
 
 
 def get_random_tweet(uuid):
@@ -63,15 +76,17 @@ def graph(request):
 
 
 def download_annotations(requests):
-    csv = "tweet_id;symptom;uuid;timestamp\n"
+    rows = [["tweet_id", "symptom", "uuid", "timestamp"]]
     for i in TweetAnnotation.objects.all():
-        csv += "{};{};{};{}\n".format(
-            i.tweet.tweet_id,
-            i.symptom,
-            i.uuid,
-            i.created
-        )
-
-    response = HttpResponse(csv, content_type='text')
+        rows.append(
+            [
+                i.tweet.tweet_id,
+                i.symptom,
+                i.uuid,
+                i.created
+                ])
+    pseudo_buffer = Echo()
+    writer = csv.writer(pseudo_buffer, delimiter=';')
+    response = StreamingHttpResponse((writer.writerow(row) for row in rows), content_type='text/csv')
     response['Content-Disposition'] = "attachment; filename=%s" % "annotations.csv"
     return response
