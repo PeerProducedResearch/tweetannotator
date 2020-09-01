@@ -7,18 +7,6 @@ from django.http import HttpResponse
 from .helpers import create_graph
 import pandas as pd
 
-from django.http import StreamingHttpResponse
-
-
-class Echo:
-    """An object that implements just the write method of the file-like
-    interface.
-    """
-    def write(self, value):
-        """Write the value by returning it, instead of storing in a buffer."""
-        return value
-
-
 
 def get_random_tweet(uuid):
     if TweetAnnotation.objects.filter(uuid=uuid).count() < 3:
@@ -62,11 +50,13 @@ def analysis(request):
 
 def annotate(request, tweet_id, answer):
     tweet = Tweet.objects.get(id=tweet_id)
-    ta = TweetAnnotation.objects.create(
-        tweet=tweet,
-        symptom=answer,
-        uuid=request.session.get('uuid', ''))
-    ta.save()
+    uuid = request.session.get('uuid', '')
+    if uuid and tweet.tweetannotation_set.filter(uuid=uuid).count() == 0:
+        ta = TweetAnnotation.objects.create(
+            tweet=tweet,
+            symptom=answer,
+            uuid=uuid)
+        ta.save()
     return redirect('/')
 
 
