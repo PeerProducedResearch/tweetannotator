@@ -8,7 +8,7 @@ from django.utils.translation import gettext_lazy as _
 def df_from_tweets(only_symptoms=False):
     dates = []
     if only_symptoms == True:
-        iterator = Tweet.objects.exclude(tweetannotation__symptom='no')
+        iterator = Tweet.objects.filter(tweetannotation__symptom='yes')
     else:
         iterator = Tweet.objects.all()
     for i in iterator:
