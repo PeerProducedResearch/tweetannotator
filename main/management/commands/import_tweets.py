@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = "Import tweets from a file"
 
     def handle(self, *args, **options):
-        df = pd.read_csv('static/list_covid_symptoms.testing.2.csv', sep=";")
+        df = pd.read_csv('static/list_covid_symptoms.testing.3.csv', sep=";")
         for i, row in df.iterrows():
             if Tweet.objects.filter(tweet_id=row['id_str']).count() == 0:
                 t, _ = Tweet.objects.get_or_create(
