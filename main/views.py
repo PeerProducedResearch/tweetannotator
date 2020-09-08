@@ -6,6 +6,7 @@ from django.http import HttpResponse
 # Create your views here.
 from .helpers import create_graph
 import pandas as pd
+import datetime
 
 
 def get_random_tweet(uuid):
@@ -14,7 +15,8 @@ def get_random_tweet(uuid):
             tweetannotation=None
         ).exclude(tweetannotation__uuid=uuid)
     else:
-        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
+        # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid) ### commented out to get current tweets
+        Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
     tl = len(tweets)
     if tl == 0:
         tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
