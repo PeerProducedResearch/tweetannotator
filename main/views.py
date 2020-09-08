@@ -16,7 +16,7 @@ def get_random_tweet(uuid):
         ).exclude(tweetannotation__uuid=uuid)
     else:
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid) ### commented out to get current tweets
-        Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
+        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
     tl = len(tweets)
     if tl == 0:
         tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
