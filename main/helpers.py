@@ -28,16 +28,17 @@ def compute_positive_rate():
     df = pd.DataFrame.from_records(TweetAnnotation.objects.all().                                    values_list('tweet__tweet_id','tweet__date','symptom','uuid','created'),
                                     columns=['tweet_id','date','symptom','uuid','timestamp'])
     df=df[(df['symptom'].notna()) & (df['uuid'].notna())]
-    ids_yes = ids_yes.groupby(['tweet_id','date','symptom']).count()
+    ids_yes = df.groupby(['tweet_id','date','symptom']).count()
     ids_yes=pd.DataFrame(ids_yes['uuid'] / ids_yes.groupby('tweet_id')['uuid'].transform('sum')).reset_index()
     ids_yes=ids_yes.loc[(ids_yes['symptom']=='yes')&(ids_yes['uuid']>=0.5),'id_str']
     ids_yes=ids_yes.groupby('date').count().reset_index().rename(columns={'uuid':'nb_yes'})
     df=df.groupby('date').count().reset_index().rename(columns={'uuid':'nb_annotations'})
     df=pd.merge(df,ids_yes, on='date',how='outer')
     df['percent_yes']=df['nb_yes']/df['nb_annotations']
+    df['date'] = pd.to_datetime(df['date'])
     return df
     
-def df_from_tweets(only_sympotms=False):
+def df_from_tweets(only_symptoms=False):
     if only_symptoms == True:
         df_yes=compute_positive_rate()
         df_all=df_all_tweets()
