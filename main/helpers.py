@@ -42,9 +42,10 @@ def df_from_tweets(only_symptoms=False):
     if only_symptoms == True:
         df_yes=compute_positive_rate()
         df_all=df_all_tweets()
-        df=pd.merge(df_all, df_yes, how='outer',on='date')
-        df['has_symptom']=df['percent_yes']*df['has_symptom']
-    adf=df
+        adf=pd.merge(df_all, df_yes, how='outer',on='date')
+        adf['has_symptom']=adf['percent_yes']*adf['has_symptom']
+    else:
+        adf=df_all_tweets()
     adf = adf.apply(lambda x: x/adf['has_symptom'].sum())
     idx = pd.date_range(adf.index[0], adf.index[-1])
     adf = adf.reindex(idx, fill_value=0)
