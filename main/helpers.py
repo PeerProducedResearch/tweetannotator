@@ -1,13 +1,7 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import pandas as pd
 import plotly.offline as py
 import plotly.graph_objs as go
-from .models import Tweet
+from .models import Tweet, TweetAnnotation
 from django.utils.translation import gettext_lazy as _
 
 
