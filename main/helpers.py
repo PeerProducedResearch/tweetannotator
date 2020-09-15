@@ -1,32 +1,54 @@
 import pandas as pd
 import plotly.offline as py
 import plotly.graph_objs as go
-from .models import Tweet
+from .models import Tweet, TweetAnnotation
 from django.utils.translation import gettext_lazy as _
 
 
-def df_from_tweets(only_symptoms=False):
+def df_all_tweets():
     dates = []
-    if only_symptoms == True:
-        iterator = Tweet.objects.filter(tweetannotation__symptom='yes')
-    else:
-        iterator = Tweet.objects.all()
+    iterator = Tweet.objects.all()
     for i in iterator:
         dates.append(i.date)
     df = pd.DataFrame(data={
         'date': dates,
         'has_symptom': dates})
     df['date'] = pd.to_datetime(df['date'])
-    adf = df.groupby(['date']).count()
+    df = df.groupby(['date']).count()
+    return df
+   
+
+def compute_positive_rate():
+    df = pd.DataFrame.from_records(TweetAnnotation.objects.all().                                    values_list('tweet__tweet_id','tweet__date','symptom','uuid','created'),
+                                    columns=['tweet_id','date','symptom','uuid','timestamp'])
+    df=df[(df['symptom'].notna()) & (df['uuid'].notna())]
+    ids_yes = df.groupby(['tweet_id','date','symptom']).count()
+    ids_yes=pd.DataFrame(ids_yes['uuid'] / ids_yes.groupby('tweet_id')['uuid'].transform('sum')).reset_index()
+    ids_yes=ids_yes.loc[(ids_yes['symptom']=='yes')&(ids_yes['uuid']>=0.5),]
+    ids_yes=ids_yes.groupby('date').count().reset_index().rename(columns={'uuid':'nb_yes'})
+    df=df.groupby('date').count().reset_index().rename(columns={'uuid':'nb_annotations'})
+    df=pd.merge(df,ids_yes, on='date',how='outer')
+    df['percent_yes']=df['nb_yes']/df['nb_annotations']
+    df['date'] = pd.to_datetime(df['date'])
+    df=df.set_index('date')
+    return df
+    
+def df_from_tweets(only_symptoms=False):
+    if only_symptoms == True:
+        df_yes=compute_positive_rate()
+        df_all=df_all_tweets()
+        adf=pd.merge(df_all, df_yes, how='outer',on='date')
+        adf['has_symptom']=adf['percent_yes']*adf['has_symptom']
+    else:
+        adf=df_all_tweets()
     adf = adf.apply(lambda x: x/adf['has_symptom'].sum())
     idx = pd.date_range(adf.index[0], adf.index[-1])
     adf = adf.reindex(idx, fill_value=0)
     print(adf)
-    adf['has_symptom_mean_3'] = adf.rolling('7d').mean()['has_symptom']
+    adf['has_symptom_mean_3'] = adf['has_symptom'].rolling('7d').mean()
     adf = adf.reset_index()
     print(adf)
     return adf
-
 
 def create_graph():
     urgences = pd.read_csv('static/urgences.csv', sep=';')
@@ -88,3 +110,4 @@ def plot_symptoms_urgences_with_ma(urgences, all_tweets, symptom_tweets_df):
         text="Lockdown (France)", showarrow=False)])
     div = py.plot(fig, auto_open=False, output_type='div')
     return div
+

@@ -108,8 +108,9 @@
 {% blocktrans %}
 <p>
 Below we visualise the number of tweets containing COVID19 symptoms using 7 days averaging windows,
-both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue).
+both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue). To build that curve, we only take into account tweets that have been labelled as "yes" at least 50% of the time ; we then show the daily rate of tweets labelled as "yes" multiplied by the daily number of tweets containing symptoms.
 {%endblocktrans%}
+
 </p>
 <p>
 {%blocktrans%}
