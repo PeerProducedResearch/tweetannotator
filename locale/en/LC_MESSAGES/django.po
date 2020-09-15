@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 11:24+0000\n"
+"POT-Creation-Date: 2020-09-15 13:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -276,16 +276,20 @@ msgid "Visualization"
 msgstr ""
 
 #: main/templates/main/index.html:108
+#, python-format
 msgid ""
 "\n"
 "<p>\n"
 "Below we visualise the number of tweets containing COVID19 symptoms using 7 "
 "days averaging windows,\n"
 "both using our simple filtering system (orange), or the improved filtering "
-"using crowd-sourced annotation (blue).\n"
+"using crowd-sourced annotation (blue). To build that curve, we only take "
+"into account tweets that have been labelled as \"yes\" at least 50%% of the "
+"time ; we then show the daily rate of tweets labelled as \"yes\" multiplied "
+"by the daily number of tweets containing symptoms.\n"
 msgstr ""
 
-#: main/templates/main/index.html:115
+#: main/templates/main/index.html:116
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/"

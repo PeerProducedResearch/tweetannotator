@@ -7,15 +7,16 @@
 # Naïla El Haouari <naila.elhaouari@cri-paris.org>, 2020
 # Marc Santolini <marc.santolini@cri-paris.org>, 2020
 # Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020
+# Naïla El Haouari <naila.elh@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-04 11:24+0000\n"
+"POT-Creation-Date: 2020-09-15 13:25+0000\n"
 "PO-Revision-Date: 2020-07-24 14:59+0000\n"
-"Last-Translator: Bastian Greshake Tzovaras <bgreshake@googlemail.com>, 2020\n"
+"Last-Translator: Naïla El Haouari <naila.elh@gmail.com>, 2020\n"
 "Language-Team: French (https://www.transifex.com/opencovid-survey/teams/111959/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -259,7 +260,7 @@ msgstr ""
 
 #: main/templates/main/index.html:67
 msgid "Latest annotations"
-msgstr "Dernière annotations"
+msgstr "Dernières annotations"
 
 #: main/templates/main/index.html:73
 msgid "Annotation"
@@ -310,18 +311,17 @@ msgid "Visualization"
 msgstr "Visualisation"
 
 #: main/templates/main/index.html:108
+#, python-format
 msgid ""
 "\n"
 "<p>\n"
 "Below we visualise the number of tweets containing COVID19 symptoms using 7 days averaging windows,\n"
-"both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue).\n"
+"both using our simple filtering system (orange), or the improved filtering using crowd-sourced annotation (blue). To build that curve, we only take into account tweets that have been labelled as \"yes\" at least 50%% of the time ; we then show the daily rate of tweets labelled as \"yes\" multiplied by the daily number of tweets containing symptoms.\n"
 msgstr ""
 "\n"
-"\n"
-"Ci-dessous, nous visualisons le nombre de tweets contenant des symptômes de COVID19 en utilisant une moyenne sur 7 jours,\n"
-"soit en utilisant notre système de filtrage simple basés sur les symptômes (orange), soit le filtrage amélioré utilisant des annotations provenant de l'annotation citoyenne (bleu).\n"
+"Nous représentons ci-dessous le nombre de tweets mentionant des symptômes du COVID19 moyenné sur 7 jours, en utilisant notre système de filtrage simple basé sur les symptômes (orange), et notre filtrage amélioré grâce aux annotations de la plateforme citoyenne. Pour construire cette courbe, on ne considère que les tweets qui ont été labellisés \"oui\" au moins 50%% du temps ; on représente ensuite le taux quotidien de tweets labellisés \"oui\", multiplié par le nombre de tweets mentionnant des symptômes par jour.\n"
 
-#: main/templates/main/index.html:115
+#: main/templates/main/index.html:116
 msgid ""
 "\n"
 "We show as a reference the number of passages to emergencies (see <a href='/analysis'>Analysis</a> for more information).\n"
