@@ -14,7 +14,7 @@ def df_all_tweets():
         'date': dates,
         'has_symptom': dates})
     df['date'] = pd.to_datetime(df['date'])
-    df = df.groupby(['date']).count().reset_index()
+    df = df.groupby(['date']).count()
     return df
    
 
@@ -24,12 +24,13 @@ def compute_positive_rate():
     df=df[(df['symptom'].notna()) & (df['uuid'].notna())]
     ids_yes = df.groupby(['tweet_id','date','symptom']).count()
     ids_yes=pd.DataFrame(ids_yes['uuid'] / ids_yes.groupby('tweet_id')['uuid'].transform('sum')).reset_index()
-    ids_yes=ids_yes.loc[(ids_yes['symptom']=='yes')&(ids_yes['uuid']>=0.5),'id_str']
+    ids_yes=ids_yes.loc[(ids_yes['symptom']=='yes')&(ids_yes['uuid']>=0.5),]
     ids_yes=ids_yes.groupby('date').count().reset_index().rename(columns={'uuid':'nb_yes'})
     df=df.groupby('date').count().reset_index().rename(columns={'uuid':'nb_annotations'})
     df=pd.merge(df,ids_yes, on='date',how='outer')
     df['percent_yes']=df['nb_yes']/df['nb_annotations']
     df['date'] = pd.to_datetime(df['date'])
+    df=df.set_index('date')
     return df
     
 def df_from_tweets(only_symptoms=False):
@@ -44,7 +45,7 @@ def df_from_tweets(only_symptoms=False):
     idx = pd.date_range(adf.index[0], adf.index[-1])
     adf = adf.reindex(idx, fill_value=0)
     print(adf)
-    adf['has_symptom_mean_3'] = adf.rolling('7d').mean()['has_symptom']
+    adf['has_symptom_mean_3'] = adf['has_symptom'].rolling('7d').mean()
     adf = adf.reset_index()
     print(adf)
     return adf
