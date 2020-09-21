@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from .helpers import create_graph
 import pandas as pd
 import datetime
+from django.db.models import Count
 
 
 def get_random_tweet(uuid):
@@ -16,7 +17,14 @@ def get_random_tweet(uuid):
         ).exclude(tweetannotation__uuid=uuid)
     else:
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid) ### commented out to get current tweets
-        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
+        # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
+
+        tweets_little_rated = Tweet.objects.all().annotate(
+            num_annotations=Count('tweetannotation')).filter(num_annotations__lt=2)
+        tweets_non_consensus = Tweet.objects.all().annotate(
+            num_annotations=Count('tweetannotation')).filter(num_annotations__gt=1)
+        tweets_non_consensus = [i for i in tweets_non_consensus if i.consensus_reached() == False]
+    tweets = list(set(list(tweets_little_rated) + tweets_non_consensus))
     tl = len(tweets)
     if tl == 0:
         tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)

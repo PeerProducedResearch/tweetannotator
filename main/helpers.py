@@ -16,7 +16,7 @@ def df_all_tweets():
     df['date'] = pd.to_datetime(df['date'])
     df = df.groupby(['date']).count()
     return df
-   
+
 
 def compute_positive_rate():
     df = pd.DataFrame.from_records(TweetAnnotation.objects.all().                                    values_list('tweet__tweet_id','tweet__date','symptom','uuid','created'),
@@ -32,7 +32,7 @@ def compute_positive_rate():
     df['date'] = pd.to_datetime(df['date'])
     df=df.set_index('date')
     return df
-    
+
 def df_from_tweets(only_symptoms=False):
     if only_symptoms == True:
         df_yes=compute_positive_rate()
@@ -44,10 +44,8 @@ def df_from_tweets(only_symptoms=False):
     adf = adf.apply(lambda x: x/adf['has_symptom'].sum())
     idx = pd.date_range(adf.index[0], adf.index[-1])
     adf = adf.reindex(idx, fill_value=0)
-    print(adf)
     adf['has_symptom_mean_3'] = adf['has_symptom'].rolling('7d').mean()
     adf = adf.reset_index()
-    print(adf)
     return adf
 
 def create_graph():
@@ -110,4 +108,3 @@ def plot_symptoms_urgences_with_ma(urgences, all_tweets, symptom_tweets_df):
         text="Lockdown (France)", showarrow=False)])
     div = py.plot(fig, auto_open=False, output_type='div')
     return div
-

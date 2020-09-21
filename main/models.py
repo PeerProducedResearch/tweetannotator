@@ -11,6 +11,14 @@ class Tweet(models.Model):
     date = models.DateField(blank=True)
     tweet_id = models.TextField(blank=True)
 
+    def consensus_reached(self):
+        all_annotations = self.tweetannotation_set.all().count()
+        for i in ['yes', 'no']:
+            count = self.tweetannotation_set.filter(symptom=i).count()
+            if (count / all_annotations) >= 0.66:
+                return True
+        return False
+
 
 class TweetAnnotation(models.Model):
     """
