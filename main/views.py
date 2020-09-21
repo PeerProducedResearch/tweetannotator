@@ -24,7 +24,7 @@ def get_random_tweet(uuid):
         tweets_non_consensus = Tweet.objects.all().annotate(
             num_annotations=Count('tweetannotation')).filter(num_annotations__gt=1)
         tweets_non_consensus = [i for i in tweets_non_consensus if i.consensus_reached() == False]
-    tweets = list(set(list(tweets_little_rated) + tweets_non_consensus))
+        tweets = list(set(list(tweets_little_rated) + tweets_non_consensus))
     tl = len(tweets)
     if tl == 0:
         tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
