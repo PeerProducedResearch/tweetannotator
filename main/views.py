@@ -12,25 +12,41 @@ from django.db.models import Count
 
 def get_random_tweet(uuid):
     if TweetAnnotation.objects.filter(uuid=uuid).count() < 3:
-        tweets = Tweet.objects.exclude(
+        tweets = list(Tweet.objects.exclude(
             tweetannotation=None
-        ).exclude(tweetannotation__uuid=uuid)
+        ).exclude(tweetannotation__uuid=uuid).values_list('tweet_id'))
     else:
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid) ### commented out to get current tweets
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
 
-        tweets_little_rated = Tweet.objects.all().annotate(
-            num_annotations=Count('tweetannotation')).filter(num_annotations__lt=2)
-        tweets_non_consensus = Tweet.objects.all().annotate(
-            num_annotations=Count('tweetannotation')).filter(num_annotations__gt=1)
-        tweets_non_consensus = [i for i in tweets_non_consensus if i.consensus_reached() == False]
-        tweets = list(set(list(tweets_little_rated) + tweets_non_consensus))
+        # get all IDs of tweets with little ratings
+        tweets_little_rated = list(Tweet.objects.all().annotate(
+            num_annotations=Count('tweetannotation')).filter(num_annotations__lt=2).values_list('tweet_id',flat=True))
+
+        # get all IDs of tweets with consensus
+        df = pd.DataFrame.from_records(TweetAnnotation.objects.all().values_list('tweet__tweet_id','tweet__date','symptom','uuid','created'),
+                                        columns=['tweet_id','date','symptom','uuid','timestamp'])
+        df = df[(df['symptom'].notna()) & (df['uuid'].notna())]
+        df_counted = df.groupby(['tweet_id']).count()
+        potential_ids = list(df_counted.loc[df_counted['date'] > 1].index)
+
+        grouped_annotations = df.groupby(['tweet_id','date','symptom']).count()
+        grouped_annotations = pd.DataFrame(grouped_annotations['uuid'] / grouped_annotations.groupby('tweet_id')['uuid'].transform('sum')).reset_index()
+        grouped_annotations = grouped_annotations.set_index(keys='tweet_id')
+        grouped_annotations = grouped_annotations[grouped_annotations.index.isin(potential_ids)]
+        consensus_ids = set(grouped_annotations.loc[grouped_annotations['uuid'] > 0.67].index)
+
+        # remove all consensus tweets from list of all potential tweets
+        tweets = list(set(potential_ids) - consensus_ids)
+        # add back the tweets that haven't been rated twice yet
+        tweets = tweets + tweets_little_rated
     tl = len(tweets)
     if tl == 0:
-        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid)
+        tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).values_list('tweet_id')
         tl = len(tweets)
     tweet_pos = random.randint(0,tl-1)
     tweet = tweets[tweet_pos]
+    tweet = Tweet.objects.get(tweet_id=tweet)
     return tweet
 
 
