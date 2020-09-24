@@ -14,7 +14,7 @@ def get_random_tweet(uuid):
     if TweetAnnotation.objects.filter(uuid=uuid).count() < 3:
         tweets = list(Tweet.objects.exclude(
             tweetannotation=None
-        ).exclude(tweetannotation__uuid=uuid).values_list('tweet_id'), flat=True)
+        ).exclude(tweetannotation__uuid=uuid).values_list('tweet_id', flat=True))
     else:
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid) ### commented out to get current tweets
         # tweets = Tweet.objects.exclude(tweetannotation__uuid=uuid).filter(date__gte=datetime.date(2020,7,1))
